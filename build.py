@@ -135,6 +135,11 @@ def head(lang, title, desc, path_by_lang, schema):
     if "fr" in path_by_lang:
         alts += f'<link rel="alternate" hreflang="x-default" href="{BASE + path_by_lang["fr"]}">'
     gsv = f'<meta name="google-site-verification" content="{esc(SITE["google_site_verification"])}">' if SITE["google_site_verification"] else ""
+    blog_u = url(lang, BLOG_SLUG[lang])
+    navlink = ""
+    if any(q["lang"] == lang for q in POSTS):
+        cur = ' aria-current="page"' if path_by_lang.get(lang, "").startswith(blog_u) else ""
+        navlink = f'<a class="navlink" href="{blog_u}"{cur}>{ {"fr": "Blog", "en": "Blog", "ar": "المدونة"}[lang] }</a>'
     fonts = "family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600&family=Cairo:wght@400;600;700"
     return f"""<!doctype html>
 <html lang="{lang}" dir="{'rtl' if lang == 'ar' else 'ltr'}">
@@ -160,6 +165,7 @@ def head(lang, title, desc, path_by_lang, schema):
 <a class="skip" href="#main">{'Aller au contenu' if lang=='fr' else 'Skip to content' if lang=='en' else 'انتقل إلى المحتوى'}</a>
 <header class="top"><div class="wrap bar">
 <a class="brand" href="{url(lang)}"><img src="/assets/logo.svg" alt="{esc(d['name'])}" width="44" height="44"><span><b>{esc(d['brand'])}</b><small>{esc(d['tagline'])}</small></span></a>
+{navlink}
 <nav class="langs">{''.join(f'<a href="{path_by_lang.get(l, url(l))}"{" aria-current=\"true\"" if l==lang else ""} hreflang="{l}">{l.upper()}</a>' for l in LANGS)}</nav>
 <a class="btn small" href="tel:{SITE['phone_intl']}">{UI[lang]['call']}</a>
 </div><div class="rule"></div></header>
@@ -340,7 +346,7 @@ def build_post(p):
     author = f'<aside class="author"><img src="/assets/logo.svg" alt="" width="56" height="56"><div><b>{u["by"]} {esc(name)}</b><p>{esc(bio)}</p><a href="{url(lang, ABOUT_SLUG[lang])}">{cta}</a></div></aside>'
     upd = p.get("updated", p["date"])
     body = f"""<article class="wrap post"><nav class="crumbs dark"><a href="{url(lang)}">{u['home']}</a> / <a href="{url(lang, BLOG_SLUG[lang])}">{u['blog']}</a></nav>
-<h1>{esc(p['title'])}</h1><p class="meta">{u['by']} <a href="{url(lang, ABOUT_SLUG[lang])}">{esc(name)}</a>, {SITE['i18n'][lang]['tagline'].lower() if lang!='ar' else SITE['i18n'][lang]['tagline']} · {u['updated']} <time datetime="{upd}">{upd}</time></p>
+<h1>{esc(p['title'])}</h1><p class="meta">{u['by']} <a href="{url(lang, ABOUT_SLUG[lang])}">{esc(name)}</a>{'،' if lang=='ar' else ','} {SITE['i18n'][lang]['tagline'].lower() if lang!='ar' else SITE['i18n'][lang]['tagline']} · {u['updated']} <time datetime="{upd}">{upd}</time></p>
 {toc}{content}{link}{author}</article>"""
     same = [q for q in POSTS if q["lang"] == lang and q["key"] != p["key"] and q.get("service") == p.get("service")]
     rest = [q for q in POSTS if q["lang"] == lang and q["key"] != p["key"] and q not in same]

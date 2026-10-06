@@ -63,3 +63,6 @@ dl dt{font-weight:700;margin-top:12px}dl dd{margin:2px 0 0;color:var(--mut)}
 .post table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15px}.post td,.post th{border:1px solid var(--line);padding:8px;text-align:start}
 .post h2{scroll-margin-top:90px}
 .tbl{overflow-x:auto}
+.navlink{font-weight:700;color:var(--ink);text-decoration:none;padding:6px 4px;border-bottom:2px solid transparent}
+.navlink:hover,.navlink[aria-current]{border-bottom-color:var(--brass)}
+@media(max-width:420px){.brand b{font-size:16px}.bar{gap:10px}}
