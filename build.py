@@ -55,6 +55,8 @@ UI = {
 }
 BLOG_SLUG = {"fr": "blog", "en": "blog", "ar": "blog"}
 ABOUT_SLUG = {"fr": "a-propos", "en": "about", "ar": "about"}
+QUOTE_SLUG = {"fr": "devis", "en": "quote", "ar": "quote"}
+QL = {"fr": "Demander un devis", "en": "Request a quote", "ar": "اطلب عرض سعر"}
 
 ICONS = {
     "plan": '<path d="M3 3h18v18H3zM3 9h8v12M11 9V3M15 14h6"/>',
@@ -151,7 +153,7 @@ def main_nav(lang, cur):
     desk = '<nav class="mainnav" aria-label="main">' + "".join(items) + "</nav>"
     mob_items = [a(url(lang), n["home"]), f'<details><summary>{n["services"]}</summary><ul>{svc_links}</ul></details>', a(url(lang, exp[lang]["slug"]), n["exp"])]
     if has_blog: mob_items.append(a(url(lang, BLOG_SLUG[lang]), n["blog"]))
-    mob_items += [a(url(lang, ABOUT_SLUG[lang]), n["about"]), f'<a href="#contact">{n["contact"]}</a>', f'<a class="btn" href="tel:{SITE["phone_intl"]}">{UI[lang]["call"]} <span dir="ltr">{SITE["phone_display"]}</span></a>']
+    mob_items += [a(url(lang, ABOUT_SLUG[lang]), n["about"]), f'<a href="#contact">{n["contact"]}</a>', f'<a class="btn" href="{url(lang, QUOTE_SLUG[lang])}">{QL[lang]}</a>', f'<a class="btn ghost" href="tel:{SITE["phone_intl"]}">{UI[lang]["call"]} <span dir="ltr">{SITE["phone_display"]}</span></a>']
     mob = f'<details class="burger"><summary aria-label="{n["menu"]}"><span></span><span></span><span></span></summary><div class="mpanel">' + "".join(mob_items) + "</div></details>"
     return desk + mob
 
@@ -191,7 +193,7 @@ def head(lang, title, desc, path_by_lang, schema):
 <a class="brand" href="{url(lang)}"><img src="/assets/logo.svg" alt="{esc(d['name'])}" width="44" height="44"><span><b>{esc(d['brand'])}</b><small>{esc(d['tagline'])}</small></span></a>
 {navlink}
 <nav class="langs">{''.join(f'<a href="{path_by_lang.get(l, url(l))}"{" aria-current=\"true\"" if l==lang else ""} hreflang="{l}">{l.upper()}</a>' for l in LANGS)}</nav>
-<a class="btn small" href="tel:{SITE['phone_intl']}">{UI[lang]['call']}</a>
+<a class="btn small" href="{url(lang, QUOTE_SLUG[lang])}"><span class="ql">{QL[lang]}</span><span class="qs">{ {"fr": "Devis", "en": "Quote", "ar": "عرض سعر"}[lang] }</span></a>
 </div><div class="rule"></div></header>
 <main id="main">
 """
@@ -206,7 +208,7 @@ def foot(lang):
 <dl><dt>{u['address']}</dt><dd>{esc(d['street'])}, {SITE['postal_code']} {esc(d['city'])}, {esc(d['country'])}</dd>
 <dt>{u['hours']}</dt><dd>{'<br>'.join(esc(h) for h in d['hours'])}</dd>
 <dt>{u['phone']}</dt><dd><a href="tel:{SITE['phone_intl']}" dir="ltr">{SITE['phone_display']}</a></dd></dl>
-<p class="ctas"><a class="btn" href="tel:{SITE['phone_intl']}">{u['call']}</a> <a class="btn ghost" href="https://wa.me/{SITE['whatsapp']}">WhatsApp</a> <a class="btn ghost" href="{esc(SITE['maps_url'])}" rel="noopener">{u['route']}</a></p></div>
+<p class="ctas"><a class="btn" href="{url(lang, QUOTE_SLUG[lang])}">{QL[lang]}</a> <a class="btn ghost" href="tel:{SITE['phone_intl']}">{u['call']}</a> <a class="btn ghost" href="https://wa.me/{SITE['whatsapp']}">WhatsApp</a> <a class="btn ghost" href="{esc(SITE['maps_url'])}" rel="noopener">{u['route']}</a></p></div>
 <div><h2>{u['services']}</h2><ul class="flist">{links}</ul>
 <p>{blog_link}<a href="{url(lang, ABOUT_SLUG[lang])}">{u['about']}</a></p></div>
 </div></section>
@@ -217,7 +219,7 @@ def foot(lang):
 def icon(name):
     return f'<svg class="ico" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICONS[name]}</svg>'
 
-def hero(lang, h1, intro, crumbs=None):
+def hero(lang, h1, intro, crumbs=None, svc=None):
     u = UI[lang]
     bc = ""
     if crumbs:
@@ -225,7 +227,7 @@ def hero(lang, h1, intro, crumbs=None):
             f'<a href="{href}">{esc(t)}</a>' if href else f"<span>{esc(t)}</span>" for t, href in crumbs) + "</nav>"
     return f"""<section class="hero"><div class="wrap">{bc}
 <h1>{esc(h1)}</h1><p class="lead">{esc(intro)}</p>
-<p class="ctas"><a class="btn" href="tel:{SITE['phone_intl']}">{u['call']} <span dir="ltr">{SITE['phone_display']}</span></a> <a class="btn ghost light" href="https://wa.me/{SITE['whatsapp']}">WhatsApp</a></p>
+<p class="ctas"><a class="btn" href="{('#devis' if svc in FIELDS else url(lang, QUOTE_SLUG[lang])) if svc else url(lang, QUOTE_SLUG[lang])}">{QL[lang]}</a> <a class="btn ghost light" href="tel:{SITE['phone_intl']}">{u['call']} <span dir="ltr">{SITE['phone_display']}</span></a> <a class="btn ghost light" href="https://wa.me/{SITE['whatsapp']}">WhatsApp</a></p>
 </div></section>"""
 
 def service_cards(lang, exclude=None):
@@ -322,10 +324,12 @@ def build_service(s, lang):
     c, u = s[lang], UI[lang]
     pbl = {l: url(l, s[l]["slug"]) for l in LANGS}
     rel = [p for p in POSTS if p["lang"] == lang and p.get("service") == s["key"]]
-    body = hero(lang, c["h1"], c["intro"], [(u["home"], url(lang)), (c["title"], None)])
+    body = hero(lang, c["h1"], c["intro"], [(u["home"], url(lang)), (c["title"], None)], svc=s["key"])
     body += f'<p class="wrap note">{u["quote"]}</p>'
     body += f'<section class="wrap sec"><h2>{u["offer"]}</h2><ul class="checks">' + "".join(f"<li>{esc(i)}</li>" for i in c["items"]) + "</ul></section>"
     if c.get("body"): body += f'<section class="wrap sec post">{md(c["body"])}</section>'
+    if s["key"] in FIELDS:
+        body += f'<section class="wrap sec quote" id="devis"><h2>{QX[lang][2]}</h2><div class="qgrid">{quote_form(lang, s["key"])}<aside class="qside"><ol class="qsteps">' + "".join(f"<li>{esc(x)}</li>" for x in QT[lang]["steps"]) + "</ol></aside></div></section>"
     body += faq_html(lang, c["faq"])
     if rel: body += f'<section class="wrap sec"><h2>{u["related"]}</h2>{post_cards(lang, rel)}</section>'
     body += f'<section class="wrap sec"><h2>{u["others"]}</h2>{service_cards(lang, exclude=s["key"])}</section>'
@@ -385,6 +389,97 @@ def build_post(p):
                    crumbs_schema([(u["home"], abs_url(lang)), (u["blog"], abs_url(lang, BLOG_SLUG[lang])), (p["title"], full)]))
     write(pbl, lang, head(lang, p["title"] + " | " + SITE["i18n"][lang]["brand"], p["description"], pbl, schema) + body + foot(lang))
 
+QT = {
+    "fr": {"title": "Demande de devis : architecte et expert à Batna | Saidi Walid", "h1": "Demander un devis",
+           "intro": "Décrivez votre projet en quelques lignes. Le formulaire prépare votre demande et l'envoie sur WhatsApp au bureau Saidi Walid. Réponse sous 48 h ouvrées en général.",
+           "desc": "Demande de devis gratuite au bureau Saidi Walid, architecte agréé et expert à Batna : conception, permis, suivi de chantier, mise en conformité, expertise amiable.",
+           "name": "Nom et prénom", "phone": "Téléphone", "service": "Service", "commune": "Commune du projet", "commune_ph": "Batna, Tazoult, Fesdis...",
+           "desc_l": "Votre besoin", "desc_ph": "Type de bâtiment, surface, situation du terrain, ce que vous attendez...", "contact": "Je préfère être recontacté par",
+           "c_call": "Appel", "c_wa": "WhatsApp", "send": "Envoyer la demande sur WhatsApp", "or": "Ou appelez directement le",
+           "choose": "Choisir un service", "other": "Autre demande", "req": "champ obligatoire",
+           "judicial": "Expertise judiciaire : l'expert est désigné par le juge et rémunéré par la provision consignée au greffe, il n'y a donc pas de devis. Pour un avis technique hors procédure, choisissez « Expertise amiable et constat ».",
+           "privacy": "Vos informations servent uniquement à répondre à votre demande. Rien n'est enregistré sur ce site.",
+           "msg": "Bonjour, je souhaite un devis.", "steps": ["Remplissez le formulaire (1 minute)", "WhatsApp s'ouvre avec votre message prêt, il suffit d'envoyer", "Le bureau vous recontacte pour préciser le besoin et chiffrer"]},
+    "en": {"title": "Request a quote: architect and expert in Batna | Saidi Walid", "h1": "Request a quote",
+           "intro": "Describe your project in a few lines. The form prepares your request and sends it on WhatsApp to Saidi Walid's office. We usually reply within 2 working days.",
+           "desc": "Free quote request to Saidi Walid, licensed architect and expert in Batna: design, permits, site supervision, compliance, private building surveys.",
+           "name": "Full name", "phone": "Phone", "service": "Service", "commune": "Project location", "commune_ph": "Batna, Tazoult, Fesdis...",
+           "desc_l": "Your request", "desc_ph": "Building type, area, plot location, what you expect...", "contact": "I prefer to be contacted by",
+           "c_call": "Phone call", "c_wa": "WhatsApp", "send": "Send request on WhatsApp", "or": "Or call directly",
+           "choose": "Choose a service", "other": "Other request", "req": "required",
+           "judicial": "Court expertise: the expert is appointed by the judge and paid from the advance deposited with the court, so there is no quote. For a technical opinion outside court, choose “Private building survey”.",
+           "privacy": "Your information is only used to answer your request. Nothing is stored on this website.",
+           "msg": "Hello, I would like a quote.", "steps": ["Fill in the form (1 minute)", "WhatsApp opens with your message ready, just press send", "The office calls you back to clarify and price the work"]},
+    "ar": {"title": "طلب عرض سعر: مهندس معماري وخبير في باتنة | سعيدي وليد", "h1": "اطلب عرض سعر",
+           "intro": "صفوا مشروعكم في بضعة أسطر. يحضّر النموذج طلبكم ويرسله عبر واتساب إلى مكتب سعيدي وليد. نرد عادة خلال يومي عمل.",
+           "desc": "طلب عرض سعر مجاني من مكتب سعيدي وليد، مهندس معماري معتمد وخبير في باتنة: تصميم، رخصة البناء، متابعة الأشغال، تسوية البنايات، خبرة ودية.",
+           "name": "الاسم واللقب", "phone": "رقم الهاتف", "service": "الخدمة", "commune": "بلدية المشروع", "commune_ph": "باتنة، تازولت، فسديس...",
+           "desc_l": "طلبكم", "desc_ph": "نوع البناية، المساحة، موقع قطعة الأرض، ما تنتظرونه...", "contact": "أفضّل التواصل عبر",
+           "c_call": "مكالمة هاتفية", "c_wa": "واتساب", "send": "إرسال الطلب عبر واتساب", "or": "أو اتصلوا مباشرة على",
+           "choose": "اختاروا خدمة", "other": "طلب آخر", "req": "حقل إلزامي",
+           "judicial": "الخبرة القضائية: يعيّن القاضي الخبير وتُدفع أتعابه من التسبيق المودع بأمانة الضبط، لذلك لا يوجد عرض سعر. للحصول على رأي تقني خارج الدعوى، اختاروا «الخبرة الودية والمعاينة».",
+           "privacy": "تُستعمل معلوماتكم فقط للرد على طلبكم. لا يُحفظ أي شيء على هذا الموقع.",
+           "msg": "السلام عليكم، أريد عرض سعر.", "steps": ["املؤوا النموذج (دقيقة واحدة)", "يُفتح واتساب ورسالتكم جاهزة، يكفي الضغط على إرسال", "يتصل بكم المكتب لتوضيح الطلب وتحديد السعر"]},
+}
+
+from quote_fields import FIELDS
+LI = {"fr": 0, "en": 1, "ar": 2}
+QX = {"fr": ("Précisions", "Choisir", "Demander un devis pour ce service"), "en": ("Details", "Choose", "Request a quote for this service"), "ar": ("تفاصيل إضافية", "اختيار", "اطلب عرض سعر لهذه الخدمة")}
+
+def quote_form(lang, preset=None):
+    t, i = QT[lang], LI[lang]
+    opts = "".join(f'<option value="{s["key"]}" data-label="{esc(s[lang]["title"])}"{" selected" if s["key"] == preset else ""}>{esc(s[lang]["title"])}</option>' for s in SERVICES)
+    groups = ""
+    for key, fields in FIELDS.items():
+        inner = ""
+        for n, (typ, lab, opt) in enumerate(fields):
+            L = esc(lab[i])
+            if typ == "select":
+                o = "".join(f"<option>{esc(x)}</option>" for x in opt[i])
+                inner += f'<label>{L}<select name="x_{key}_{n}" data-q="{L}"><option value="">{QX[lang][1]}</option>{o}</select></label>'
+            else:
+                extra = ' inputmode="numeric" dir="ltr"' if typ == "number" else ""
+                inner += f'<label>{L}<input name="x_{key}_{n}" data-q="{L}"{extra}></label>'
+        groups += f'<div class="qgroup" data-svc="{key}"{"" if key == preset else " hidden"}>{inner}</div>'
+    labels = json.dumps({"name": t["name"], "phone": t["phone"], "service": t["service"], "commune": t["commune"], "desc": QX[lang][0], "contact": t["contact"], "msg": t["msg"]}, ensure_ascii=False)
+    return f"""<form id="qf" class="qform" novalidate>
+<label>{t['service']} *<select name="service" required><option value="">{t['choose']}</option>{opts}<option value="other" data-label="{t['other']}">{t['other']}</option></select></label>
+<p class="qnote" id="qjud" hidden>{esc(t['judicial'])}</p>
+{groups}
+<div class="qrow"><label>{t['name']} *<input name="name" required autocomplete="name"></label>
+<label>{t['phone']} *<input name="phone" type="tel" required autocomplete="tel" inputmode="tel" dir="ltr"></label></div>
+<label>{t['commune']}<input name="commune" placeholder="{esc(t['commune_ph'])}"></label>
+<label>{QX[lang][0]}<textarea name="desc" rows="4" placeholder="{esc(t['desc_ph'])}"></textarea></label>
+<fieldset><legend>{t['contact']}</legend><label class="inl"><input type="radio" name="contact" value="{t['c_wa']}" checked> {t['c_wa']}</label><label class="inl"><input type="radio" name="contact" value="{t['c_call']}"> {t['c_call']}</label></fieldset>
+<p class="qerr" id="qerr" hidden>* {t['req']}</p>
+<button class="btn" type="submit">{t['send']}</button>
+<p class="qsmall">{t['or']} <a href="tel:{SITE['phone_intl']}" dir="ltr">{SITE['phone_display']}</a>. {esc(t['privacy'])}</p>
+</form>
+<script>
+(function(){{var F=document.getElementById('qf'),f=F.elements,L={labels},W='{SITE['whatsapp']}',sel=f.service,j=document.getElementById('qjud'),G=F.querySelectorAll('.qgroup');
+var q=new URLSearchParams(location.search).get('service');if(q&&sel.querySelector('option[value="'+q+'"]'))sel.value=q;
+function chk(){{j.hidden=sel.value!=='expertise-judiciaire';for(var k=0;k<G.length;k++)G[k].hidden=G[k].getAttribute('data-svc')!==sel.value}}sel.addEventListener('change',chk);chk();
+F.addEventListener('submit',function(e){{e.preventDefault();var ok=true;['name','phone','service'].forEach(function(k){{var el=f[k];var v=el.value.trim();el.classList.toggle('bad',!v);if(!v)ok=false}});
+document.getElementById('qerr').hidden=ok;if(!ok)return;var o=sel.options[sel.selectedIndex];
+var m=[L.msg,'',L.service+' : '+(o.getAttribute('data-label')||o.text)];
+var g=F.querySelector('.qgroup[data-svc="'+sel.value+'"]');if(g){{var xs=g.querySelectorAll('[data-q]');for(var k=0;k<xs.length;k++){{var v=xs[k].value.trim();if(v)m.push(xs[k].getAttribute('data-q')+' : '+v)}}}}
+if(f.commune.value.trim())m.push(L.commune+' : '+f.commune.value.trim());if(f.desc.value.trim())m.push(L.desc+' : '+f.desc.value.trim());
+m.push('');m.push(L.name+' : '+f.name.value.trim());m.push(L.phone+' : '+f.phone.value.trim());m.push(L.contact+' : '+f.contact.value);
+window.open('https://wa.me/'+W+'?text='+encodeURIComponent(m.join(String.fromCharCode(10))),'_blank','noopener');}});}})();
+</script>"""
+
+def build_quote(lang):
+    t, u = QT[lang], UI[lang]
+    pbl = {l: url(l, QUOTE_SLUG[l]) for l in LANGS}
+    steps = "".join(f"<li>{esc(x)}</li>" for x in t["steps"])
+    body = f"""<section class="hero small"><div class="wrap"><nav class="crumbs" aria-label="breadcrumb"><a href="{url(lang)}">{u['home']}</a> / <span>{t['h1']}</span></nav>
+<h1>{t['h1']}</h1><p class="lead">{esc(t['intro'])}</p></div></section>
+<section class="wrap sec quote"><div class="qgrid">{quote_form(lang)}
+<aside class="qside"><ol class="qsteps">{steps}</ol></aside></div></section>"""
+    schema = graph({"@type": "ContactPage", "name": t["h1"], "url": abs_url(lang, QUOTE_SLUG[lang]), "about": {"@id": BASE + "/#business"}, "inLanguage": lang},
+                   crumbs_schema([(u["home"], abs_url(lang)), (t["h1"], abs_url(lang, QUOTE_SLUG[lang]))]), org_schema(lang))
+    write(pbl, lang, head(lang, t["title"], t["desc"], pbl, schema) + body + foot(lang))
+
 def build_about(lang):
     u = UI[lang]
     pbl = {l: url(l, ABOUT_SLUG[l]) for l in LANGS}
@@ -427,7 +522,7 @@ def main():
     OUT.mkdir()
     shutil.copytree(ROOT / "assets", OUT / "assets")
     for lang in LANGS:
-        build_home(lang); build_blog(lang); build_about(lang)
+        build_home(lang); build_blog(lang); build_about(lang); build_quote(lang)
         for s in SERVICES: build_service(s, lang)
     for p in POSTS: build_post(p)
     build_404(); build_meta_files()

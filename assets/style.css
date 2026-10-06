@@ -88,3 +88,24 @@ dl dt{font-weight:700;margin-top:12px}dl dd{margin:2px 0 0;color:var(--mut)}
 @media(max-width:1260px){.brand small{display:none}}
 @media(max-width:1100px){.mainnav>a,.dd>button{padding:10px 7px;font-size:14px}}
 @media(max-width:1480px){.brand small{display:none}}
+.hero.small{padding:40px 0 36px}
+.qgrid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:32px;align-items:start}
+.qform{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:14px}
+.qform label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:15px}
+.qform input:not([type=radio]),.qform select,.qform textarea{font:inherit;font-weight:400;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--txt);width:100%}
+.qform input:focus,.qform select:focus,.qform textarea:focus{outline:none;border-color:var(--brass)}
+.qform .bad{border-color:#c0392b!important}
+.qform fieldset{border:0;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px 18px}.qform legend{font-weight:600;font-size:15px;margin-bottom:6px;width:100%}
+.qform label.inl{flex-direction:row;align-items:center;gap:8px;font-weight:400}
+.qform .btn{border:0;cursor:pointer;font:inherit;font-weight:700;font-size:16px;align-self:flex-start}
+.qnote{background:#fbf6e6;border-inline-start:4px solid var(--brass);border-radius:8px;padding:12px 14px;margin:0;font-size:14px}
+.qerr{color:#c0392b;margin:0;font-size:14px}.qsmall{color:var(--mut);font-size:13px;margin:0}
+.qsteps{background:var(--ink);color:#fff;border-radius:var(--r);padding:24px 24px 24px 44px;margin:0}html[dir=rtl] .qsteps{padding:24px 44px 24px 24px}.qsteps li{margin:8px 0}
+@media(max-width:860px){.qgrid{grid-template-columns:1fr}}
+.btn.small,.brand b{white-space:nowrap}.qs{display:none}
+@media(max-width:1180px){.ql{display:none}.qs{display:inline}}
+.qgroup{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--paper);border-radius:10px;padding:14px}
+.qgroup[hidden]{display:none}
+.qrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.qgroup,.qrow{grid-template-columns:1fr}}
+#devis,#contact{scroll-margin-top:90px}
