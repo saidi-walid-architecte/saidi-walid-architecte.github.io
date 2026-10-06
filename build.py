@@ -127,6 +127,32 @@ def load_posts():
 
 POSTS = load_posts()
 
+NAV = {
+    "fr": {"home": "Accueil", "services": "Services", "exp": "Expertise judiciaire", "blog": "Blog", "about": "À propos", "contact": "Contact", "menu": "Menu", "all": "Tous les services"},
+    "en": {"home": "Home", "services": "Services", "exp": "Court expertise", "blog": "Blog", "about": "About", "contact": "Contact", "menu": "Menu", "all": "All services"},
+    "ar": {"home": "الرئيسية", "services": "الخدمات", "exp": "الخبرة القضائية", "blog": "المدونة", "about": "من نحن", "contact": "اتصل بنا", "menu": "القائمة", "all": "كل الخدمات"},
+}
+
+def main_nav(lang, cur):
+    n = NAV[lang]
+    exp = next(s for s in SERVICES if s["key"] == "expertise-judiciaire")
+    def a(href, label, cls=""):
+        c = ' aria-current="page"' if cur and href != url(lang) and cur.startswith(href) else (' aria-current="page"' if cur == href else "")
+        return f'<a href="{href}"{c}{(" class=" + chr(34) + cls + chr(34)) if cls else ""}>{esc(label)}</a>'
+    svc_links = "".join(f'<li><a href="{url(lang, s[lang]["slug"])}">{esc(s[lang]["title"])}</a></li>' for s in SERVICES)
+    has_blog = any(q["lang"] == lang for q in POSTS)
+    items = [a(url(lang), n["home"]),
+             f'<div class="dd"><button type="button" aria-haspopup="true">{n["services"]} <span aria-hidden="true">▾</span></button><ul class="ddm">{svc_links}</ul></div>',
+             a(url(lang, exp[lang]["slug"]), n["exp"])]
+    if has_blog: items.append(a(url(lang, BLOG_SLUG[lang]), n["blog"]))
+    items += [a(url(lang, ABOUT_SLUG[lang]), n["about"]), f'<a href="#contact">{n["contact"]}</a>']
+    desk = '<nav class="mainnav" aria-label="main">' + "".join(items) + "</nav>"
+    mob_items = [a(url(lang), n["home"]), f'<details><summary>{n["services"]}</summary><ul>{svc_links}</ul></details>', a(url(lang, exp[lang]["slug"]), n["exp"])]
+    if has_blog: mob_items.append(a(url(lang, BLOG_SLUG[lang]), n["blog"]))
+    mob_items += [a(url(lang, ABOUT_SLUG[lang]), n["about"]), f'<a href="#contact">{n["contact"]}</a>', f'<a class="btn" href="tel:{SITE["phone_intl"]}">{UI[lang]["call"]} <span dir="ltr">{SITE["phone_display"]}</span></a>']
+    mob = f'<details class="burger"><summary aria-label="{n["menu"]}"><span></span><span></span><span></span></summary><div class="mpanel">' + "".join(mob_items) + "</div></details>"
+    return desk + mob
+
 # ---------- layout ----------
 def head(lang, title, desc, path_by_lang, schema):
     d = SITE["i18n"][lang]
@@ -135,11 +161,7 @@ def head(lang, title, desc, path_by_lang, schema):
     if "fr" in path_by_lang:
         alts += f'<link rel="alternate" hreflang="x-default" href="{BASE + path_by_lang["fr"]}">'
     gsv = f'<meta name="google-site-verification" content="{esc(SITE["google_site_verification"])}">' if SITE["google_site_verification"] else ""
-    blog_u = url(lang, BLOG_SLUG[lang])
-    navlink = ""
-    if any(q["lang"] == lang for q in POSTS):
-        cur = ' aria-current="page"' if path_by_lang.get(lang, "").startswith(blog_u) else ""
-        navlink = f'<a class="navlink" href="{blog_u}"{cur}>{ {"fr": "Blog", "en": "Blog", "ar": "المدونة"}[lang] }</a>'
+    navlink = main_nav(lang, path_by_lang.get(lang, ""))
     fonts = "family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600&family=Cairo:wght@400;600;700"
     return f"""<!doctype html>
 <html lang="{lang}" dir="{'rtl' if lang == 'ar' else 'ltr'}">
@@ -177,7 +199,7 @@ def foot(lang):
     blog_link = f'<a href="{url(lang, BLOG_SLUG[lang])}">{u["blog"]}</a> · ' if any(p["lang"] == lang for p in POSTS) else ""
     links = "".join(f'<li><a href="{url(lang, s[lang]["slug"])}">{esc(s[lang]["title"])}</a></li>' for s in SERVICES)
     return f"""</main>
-<section class="visit"><div class="wrap grid2">
+<section class="visit" id="contact"><div class="wrap grid2">
 <div><h2>{u['visit']}</h2>
 <dl><dt>{u['address']}</dt><dd>{esc(d['street'])}, {SITE['postal_code']} {esc(d['city'])}, {esc(d['country'])}</dd>
 <dt>{u['hours']}</dt><dd>{'<br>'.join(esc(h) for h in d['hours'])}</dd>
