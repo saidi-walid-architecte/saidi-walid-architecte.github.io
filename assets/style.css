@@ -109,3 +109,4 @@ dl dt{font-weight:700;margin-top:12px}dl dd{margin:2px 0 0;color:var(--mut)}
 .qrow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:600px){.qgroup,.qrow{grid-template-columns:1fr}}
 #devis,#contact{scroll-margin-top:90px}
+.qbtns{display:flex;flex-wrap:wrap;gap:10px}

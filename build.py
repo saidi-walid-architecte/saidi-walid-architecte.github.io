@@ -207,7 +207,7 @@ def foot(lang):
 <div><h2>{u['visit']}</h2>
 <dl><dt>{u['address']}</dt><dd>{esc(d['street'])}, {SITE['postal_code']} {esc(d['city'])}, {esc(d['country'])}</dd>
 <dt>{u['hours']}</dt><dd>{'<br>'.join(esc(h) for h in d['hours'])}</dd>
-<dt>{u['phone']}</dt><dd><a href="tel:{SITE['phone_intl']}" dir="ltr">{SITE['phone_display']}</a></dd></dl>
+<dt>{u['phone']}</dt><dd><a href="tel:{SITE['phone_intl']}" dir="ltr">{SITE['phone_display']}</a></dd>{f'<dt>E-mail</dt><dd><a href="mailto:{SITE["email"]}" dir="ltr">{SITE["email"]}</a></dd>' if SITE['email'] else ''}</dl>
 <p class="ctas"><a class="btn" href="{url(lang, QUOTE_SLUG[lang])}">{QL[lang]}</a> <a class="btn ghost" href="tel:{SITE['phone_intl']}">{u['call']}</a> <a class="btn ghost" href="https://wa.me/{SITE['whatsapp']}">WhatsApp</a> <a class="btn ghost" href="{esc(SITE['maps_url'])}" rel="noopener">{u['route']}</a></p></div>
 <div><h2>{u['services']}</h2><ul class="flist">{links}</ul>
 <p>{blog_link}<a href="{url(lang, ABOUT_SLUG[lang])}">{u['about']}</a></p></div>
@@ -452,7 +452,7 @@ def quote_form(lang, preset=None):
 <label>{QX[lang][0]}<textarea name="desc" rows="4" placeholder="{esc(t['desc_ph'])}"></textarea></label>
 <fieldset><legend>{t['contact']}</legend><label class="inl"><input type="radio" name="contact" value="{t['c_wa']}" checked> {t['c_wa']}</label><label class="inl"><input type="radio" name="contact" value="{t['c_call']}"> {t['c_call']}</label></fieldset>
 <p class="qerr" id="qerr" hidden>* {t['req']}</p>
-<button class="btn" type="submit">{t['send']}</button>
+<div class="qbtns"><button class="btn" type="submit" value="wa">{t['send']}</button>{f'<button class="btn ghost" type="submit" value="mail">{ {"fr": "Envoyer par e-mail", "en": "Send by e-mail", "ar": "إرسال عبر البريد الإلكتروني"}[lang] }</button>' if SITE['email'] else ''}</div>
 <p class="qsmall">{t['or']} <a href="tel:{SITE['phone_intl']}" dir="ltr">{SITE['phone_display']}</a>. {esc(t['privacy'])}</p>
 </form>
 <script>
@@ -465,7 +465,9 @@ var m=[L.msg,'',L.service+' : '+(o.getAttribute('data-label')||o.text)];
 var g=F.querySelector('.qgroup[data-svc="'+sel.value+'"]');if(g){{var xs=g.querySelectorAll('[data-q]');for(var k=0;k<xs.length;k++){{var v=xs[k].value.trim();if(v)m.push(xs[k].getAttribute('data-q')+' : '+v)}}}}
 if(f.commune.value.trim())m.push(L.commune+' : '+f.commune.value.trim());if(f.desc.value.trim())m.push(L.desc+' : '+f.desc.value.trim());
 m.push('');m.push(L.name+' : '+f.name.value.trim());m.push(L.phone+' : '+f.phone.value.trim());m.push(L.contact+' : '+f.contact.value);
-window.open('https://wa.me/'+W+'?text='+encodeURIComponent(m.join(String.fromCharCode(10))),'_blank','noopener');}});}})();
+var txt=m.join(String.fromCharCode(10)),sb=e.submitter;
+if(sb&&sb.value==='mail'){{location.href='mailto:{SITE['email']}?subject='+encodeURIComponent(L.msg+' '+(o.getAttribute('data-label')||o.text))+'&body='+encodeURIComponent(txt);}}
+else window.open('https://wa.me/'+W+'?text='+encodeURIComponent(txt),'_blank','noopener');}});}})();
 </script>"""
 
 def build_quote(lang):

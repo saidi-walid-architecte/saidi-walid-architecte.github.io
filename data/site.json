@@ -3,10 +3,16 @@
   "phone_display": "0661 74 33 11",
   "phone_intl": "+213661743311",
   "whatsapp": "213661743311",
-  "email": "",
+  "email": "bet.walidsaidibatna@gmail.com",
   "maps_url": "https://www.google.com/maps/search/?api=1&query=Saidi+Walid+architecte+Cit%C3%A9+Fr%C3%A8res+Lembarkia+Batna",
   "postal_code": "05000",
-  "opening_hours_schema": ["Su 09:00-17:00", "Mo 09:00-17:00", "Tu 09:00-17:00", "We 09:00-17:00", "Th 09:00-17:00"],
+  "opening_hours_schema": [
+    "Su 09:00-17:00",
+    "Mo 09:00-17:00",
+    "Tu 09:00-17:00",
+    "We 09:00-17:00",
+    "Th 09:00-17:00"
+  ],
   "google_site_verification": "c1eWeyqJIzoh718gMN-DgbD9hQAGho_J9hb_zIfSAcM",
   "same_as": [],
   "i18n": {
@@ -17,16 +23,31 @@
       "street": "18 Rue W.R, Cité Frères Lembarkia, Parc à Fourrage",
       "city": "Batna",
       "country": "Algérie",
-      "hours": ["Dimanche au jeudi : 9h - 17h", "Vendredi et samedi : fermé"],
+      "hours": [
+        "Dimanche au jeudi : 9h - 17h",
+        "Vendredi et samedi : fermé"
+      ],
       "home_title": "Architecte et expert judiciaire à Batna | Saidi Walid",
       "home_desc": "Saidi Walid, architecte agréé et expert judiciaire à Batna : conception, permis de construire, suivi de chantier, mise en conformité et expertise bâtiment. 0661 74 33 11.",
       "home_h1": "Architecte agréé et expert judiciaire à Batna",
       "home_intro": "Le bureau d'architecture de Saidi Walid, architecte agréé, est situé Cité Frères Lembarkia, Parc à Fourrage, à Batna. Nous concevons vos projets de construction, montons les dossiers de permis de construire et de mise en conformité, suivons les chantiers et réalisons des expertises judiciaires et amiables en bâtiment et en foncier.",
       "why": [
-        ["Architecte agréé", "Vos plans et dossiers sont établis et signés par un architecte agréé, comme l'exige la réglementation algérienne de l'urbanisme."],
-        ["Expert judiciaire", "Une pratique régulière des missions confiées par les juridictions de Batna : rigueur, méthode contradictoire et rapports clairs."],
-        ["Ancré à Batna", "Une connaissance du terrain, des services d'urbanisme de la wilaya et des réalités du foncier local."],
-        ["Arabe et français", "Rapports, plans et échanges en arabe ou en français, selon le dossier et l'administration."]
+        [
+          "Architecte agréé",
+          "Vos plans et dossiers sont établis et signés par un architecte agréé, comme l'exige la réglementation algérienne de l'urbanisme."
+        ],
+        [
+          "Expert judiciaire",
+          "Une pratique régulière des missions confiées par les juridictions de Batna : rigueur, méthode contradictoire et rapports clairs."
+        ],
+        [
+          "Ancré à Batna",
+          "Une connaissance du terrain, des services d'urbanisme de la wilaya et des réalités du foncier local."
+        ],
+        [
+          "Arabe et français",
+          "Rapports, plans et échanges en arabe ou en français, selon le dossier et l'administration."
+        ]
       ]
     },
     "en": {
@@ -36,16 +57,31 @@
       "street": "18 Rue W.R, Cité Frères Lembarkia, Parc à Fourrage",
       "city": "Batna",
       "country": "Algeria",
-      "hours": ["Sunday to Thursday: 9am - 5pm", "Friday and Saturday: closed"],
+      "hours": [
+        "Sunday to Thursday: 9am - 5pm",
+        "Friday and Saturday: closed"
+      ],
       "home_title": "Architect and court-appointed expert in Batna | Saidi Walid",
       "home_desc": "Saidi Walid, licensed architect and court-appointed expert in Batna, Algeria: design, building permits, site supervision, compliance and building surveys. +213 661 74 33 11.",
       "home_h1": "Licensed architect and court-appointed expert in Batna",
       "home_intro": "The architecture office of Saidi Walid, licensed architect, is located in Cité Frères Lembarkia, Parc à Fourrage, Batna, Algeria. We design building projects, prepare building permit and compliance files, supervise construction sites and carry out court-appointed and private expert reports on buildings and land.",
       "why": [
-        ["Licensed architect", "Plans and files are drawn up and signed by a licensed architect, as required by Algerian planning regulations."],
-        ["Court-appointed expert", "Regular assignments from the courts of Batna: rigour, adversarial method and clear reports."],
-        ["Based in Batna", "Knowledge of the ground, the wilaya's planning services and local land issues."],
-        ["Arabic and French", "Reports, plans and exchanges in Arabic or French, depending on the file and the authority."]
+        [
+          "Licensed architect",
+          "Plans and files are drawn up and signed by a licensed architect, as required by Algerian planning regulations."
+        ],
+        [
+          "Court-appointed expert",
+          "Regular assignments from the courts of Batna: rigour, adversarial method and clear reports."
+        ],
+        [
+          "Based in Batna",
+          "Knowledge of the ground, the wilaya's planning services and local land issues."
+        ],
+        [
+          "Arabic and French",
+          "Reports, plans and exchanges in Arabic or French, depending on the file and the authority."
+        ]
       ]
     },
     "ar": {
@@ -55,16 +91,31 @@
       "street": "18 شارع W.R، حي الإخوة لمباركية، حظيرة العلف (Parc à Fourrage)",
       "city": "باتنة",
       "country": "الجزائر",
-      "hours": ["من الأحد إلى الخميس: 9:00 - 17:00", "الجمعة والسبت: مغلق"],
+      "hours": [
+        "من الأحد إلى الخميس: 9:00 - 17:00",
+        "الجمعة والسبت: مغلق"
+      ],
       "home_title": "مهندس معماري معتمد وخبير قضائي في باتنة | سعيدي وليد",
       "home_desc": "سعيدي وليد، مهندس معماري معتمد وخبير قضائي في باتنة: تصميم، رخصة البناء، متابعة الأشغال، تسوية البنايات وخبرة قضائية في البناء والعقار. 0661743311.",
       "home_h1": "مهندس معماري معتمد وخبير قضائي في باتنة",
       "home_intro": "مكتب الهندسة المعمارية للمهندس المعماري المعتمد سعيدي وليد يقع في حي الإخوة لمباركية، حظيرة العلف، باتنة. نصمم مشاريع البناء، ونحضّر ملفات رخصة البناء وتسوية البنايات، ونتابع الورشات، وننجز الخبرات القضائية والودية في مجال البناء والعقار.",
       "why": [
-        ["مهندس معماري معتمد", "مخططاتكم وملفاتكم يعدّها ويوقّعها مهندس معماري معتمد كما يشترطه قانون التعمير الجزائري."],
-        ["خبير قضائي", "ممارسة منتظمة للمهام التي تسندها جهات القضاء بباتنة: دقة، احترام مبدأ الوجاهية وتقارير واضحة."],
-        ["في قلب باتنة", "معرفة ميدانية بمصالح التعمير في الولاية وبواقع العقار المحلي."],
-        ["بالعربية والفرنسية", "تقارير ومخططات ومراسلات بالعربية أو بالفرنسية حسب الملف والإدارة."]
+        [
+          "مهندس معماري معتمد",
+          "مخططاتكم وملفاتكم يعدّها ويوقّعها مهندس معماري معتمد كما يشترطه قانون التعمير الجزائري."
+        ],
+        [
+          "خبير قضائي",
+          "ممارسة منتظمة للمهام التي تسندها جهات القضاء بباتنة: دقة، احترام مبدأ الوجاهية وتقارير واضحة."
+        ],
+        [
+          "في قلب باتنة",
+          "معرفة ميدانية بمصالح التعمير في الولاية وبواقع العقار المحلي."
+        ],
+        [
+          "بالعربية والفرنسية",
+          "تقارير ومخططات ومراسلات بالعربية أو بالفرنسية حسب الملف والإدارة."
+        ]
       ]
     }
   }
