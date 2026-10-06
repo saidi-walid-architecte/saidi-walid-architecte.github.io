@@ -56,3 +56,10 @@ dl dt{font-weight:700;margin-top:12px}dl dd{margin:2px 0 0;color:var(--mut)}
 .foot{background:var(--ink);color:#aab6c3;font-size:14px;padding:18px 0}
 .wa{position:fixed;inset-inline-end:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:6}
 @media(max-width:760px){.grid2{grid-template-columns:1fr}.brand small{display:none}.flist{columns:1}.bar .btn.small{display:none}.hero{padding:40px 0}}
+.toc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;margin:20px 0}.toc ol{margin:8px 0 0;padding-inline-start:20px}.toc li{margin:3px 0}
+.field{margin:22px 0;background:#fbf6e6;border-inline-start:4px solid var(--brass);border-radius:8px;padding:14px 18px;font-size:16px}
+.author{display:flex;gap:14px;align-items:flex-start;margin-top:30px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px}.author p{margin:4px 0 6px;color:var(--mut);font-size:15px}.author a{font-weight:600}
+.post h3{font-size:22px;color:var(--ink);margin-top:22px}
+.post table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15px}.post td,.post th{border:1px solid var(--line);padding:8px;text-align:start}
+.post h2{scroll-margin-top:90px}
+.tbl{overflow-x:auto}

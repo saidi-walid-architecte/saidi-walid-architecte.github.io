@@ -26,6 +26,6 @@ Une tache au plafond, une peinture qui cloque, une odeur d'humidité : le dégâ
 
 ## Amiable ou judiciaire ?
 
-Une **expertise amiable** permet souvent de régler le problème rapidement : le rapport identifie la cause et chiffre les travaux, ce qui facilite l'accord. Si le voisin refuse, la voie judiciaire reste possible ; le tribunal peut alors ordonner une **expertise judiciaire**.
+Une **expertise amiable** permet souvent de régler le problème rapidement : le rapport identifie la cause et chiffre les travaux, ce qui facilite l'accord. Si le voisin refuse, la voie judiciaire reste possible ; le tribunal peut alors ordonner une **expertise judiciaire** : voir [comment se déroule une expertise judiciaire](/blog/expertise-judiciaire-batiment-deroulement/). Si des fissures accompagnent l'infiltration, lisez aussi [malfaçons et garantie décennale](/blog/malfacons-garantie-decennale-expertise/).
 
-Le bureau Saidi Walid réalise ces deux types d'expertise à Batna. Contact : 0661 74 33 11.
+Le bureau Saidi Walid réalise une [expertise amiable](/expertise-batiment-amiable-batna/) ou intervient comme [expert judiciaire à Batna](/expertise-judiciaire-batna/). Contact : 0661 74 33 11.

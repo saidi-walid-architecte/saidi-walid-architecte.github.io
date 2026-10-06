@@ -87,14 +87,25 @@ def md(text):
     out, lst = [], None
     for block in re.split(r"\n\s*\n", text.strip()):
         lines = block.strip().split("\n")
-        if lines[0].startswith("## "):
-            out.append(f"<h2>{inline(lines[0][3:])}</h2>")
+        if lines[0].startswith("### "):
+            out.append(f"<h3>{inline(lines[0][4:])}</h3>")
+            lines = lines[1:]
+            if not lines: continue
+        elif lines[0].startswith("## "):
+            out.append(f'<h2 id="s{sum(1 for x in out if x.startswith("<h2"))+1}">{inline(lines[0][3:])}</h2>')
             lines = lines[1:]
             if not lines: continue
         if all(re.match(r"^- ", l) for l in lines):
             out.append("<ul>" + "".join(f"<li>{inline(l[2:])}</li>" for l in lines) + "</ul>")
         elif all(re.match(r"^\d+\. ", l) for l in lines):
             out.append("<ol>" + "".join(f"<li>{inline(re.sub(r'^\d+\. ', '', l))}</li>" for l in lines) + "</ol>")
+        elif all(l.startswith("|") for l in lines):
+            rows = [[c.strip() for c in l.strip("|").split("|")] for l in lines if not re.match(r"^\|[-\s|:]+\|$", l)]
+            h = "".join(f"<th>{inline(c)}</th>" for c in rows[0])
+            bd = "".join("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in r) + "</tr>" for r in rows[1:])
+            out.append(f'<div class="tbl"><table><thead><tr>{h}</tr></thead><tbody>{bd}</tbody></table></div>')
+        elif all(l.startswith("> ") for l in lines):
+            out.append('<blockquote class="field">' + inline(" ".join(l[2:] for l in lines)) + "</blockquote>")
         else:
             out.append(f"<p>{inline(' '.join(lines))}</p>")
     return "\n".join(out)
@@ -139,7 +150,7 @@ def head(lang, title, desc, path_by_lang, schema):
 {alts}
 <meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}">
 <meta property="og:url" content="{canon}"><meta property="og:image" content="{BASE}/assets/og.png"><meta property="og:locale" content="{ {'fr':'fr_DZ','en':'en_US','ar':'ar_DZ'}[lang] }">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/favicon-96.png" sizes="96x96" type="image/png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?{fonts}&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
@@ -284,6 +295,7 @@ def build_service(s, lang):
     body = hero(lang, c["h1"], c["intro"], [(u["home"], url(lang)), (c["title"], None)])
     body += f'<p class="wrap note">{u["quote"]}</p>'
     body += f'<section class="wrap sec"><h2>{u["offer"]}</h2><ul class="checks">' + "".join(f"<li>{esc(i)}</li>" for i in c["items"]) + "</ul></section>"
+    if c.get("body"): body += f'<section class="wrap sec post">{md(c["body"])}</section>'
     body += faq_html(lang, c["faq"])
     if rel: body += f'<section class="wrap sec"><h2>{u["related"]}</h2>{post_cards(lang, rel)}</section>'
     body += f'<section class="wrap sec"><h2>{u["others"]}</h2>{service_cards(lang, exclude=s["key"])}</section>'
@@ -306,21 +318,40 @@ def build_blog(lang):
                    crumbs_schema([(u["home"], abs_url(lang)), (u["blog"], abs_url(lang, BLOG_SLUG[lang]))]), org_schema(lang))
     write(pbl, lang, head(lang, title + " | " + SITE["i18n"][lang]["brand"], u["blog_intro"], pbl, schema) + body + foot(lang))
 
+AUTHOR = {
+    "fr": ("Saidi Walid", "Architecte agréé et expert judiciaire à Batna. Il réalise des missions d'expertise ordonnées par les juridictions de Batna (tribunal, cour, tribunal administratif) en bâtiment et en foncier, et conçoit des projets privés et publics dans la wilaya.", "Voir le profil"),
+    "en": ("Saidi Walid", "Licensed architect and court-appointed expert in Batna. He carries out expert assignments ordered by the courts of Batna on buildings and land, and designs private and public projects in the wilaya.", "View profile"),
+    "ar": ("سعيدي وليد", "مهندس معماري معتمد وخبير قضائي في باتنة. ينجز مهام الخبرة التي تأمر بها الجهات القضائية بباتنة (المحكمة، المجلس القضائي، المحكمة الإدارية) في مجال البناء والعقار، ويصمم مشاريع خاصة وعمومية في الولاية.", "عرض الملف"),
+}
+TOC = {"fr": "Sommaire", "en": "Contents", "ar": "محتويات المقال"}
+
 def build_post(p):
     lang, u = p["lang"], UI[p["lang"]]
     sib = {q["lang"]: q for q in POSTS if q["key"] == p["key"]}
     pbl = {l: url(l, BLOG_SLUG[l] + "/" + q["slug"]) for l, q in sib.items()}
     svc = next((s for s in SERVICES if s["key"] == p.get("service")), None)
     link = f'<aside class="box"><a href="{url(lang, svc[lang]["slug"])}">{esc(svc[lang]["title"])} →</a></aside>' if svc else ""
+    content = md(p["body"])
+    heads = re.findall(r'<h2 id="(s\d+)">(.*?)</h2>', content)
+    toc = ""
+    if len(heads) >= 3:
+        toc = f'<nav class="toc"><b>{TOC[lang]}</b><ol>' + "".join(f'<li><a href="#{i}">{t}</a></li>' for i, t in heads) + "</ol></nav>"
+    name, bio, cta = AUTHOR[lang]
+    author = f'<aside class="author"><img src="/assets/logo.svg" alt="" width="56" height="56"><div><b>{u["by"]} {esc(name)}</b><p>{esc(bio)}</p><a href="{url(lang, ABOUT_SLUG[lang])}">{cta}</a></div></aside>'
+    upd = p.get("updated", p["date"])
     body = f"""<article class="wrap post"><nav class="crumbs dark"><a href="{url(lang)}">{u['home']}</a> / <a href="{url(lang, BLOG_SLUG[lang])}">{u['blog']}</a></nav>
-<h1>{esc(p['title'])}</h1><p class="meta">{u['by']} <a href="{url(lang, ABOUT_SLUG[lang])}">{'سعيدي وليد' if lang=='ar' else 'Saidi Walid'}</a>, {SITE['i18n'][lang]['tagline'].lower() if lang!='ar' else SITE['i18n'][lang]['tagline']} · {u['updated']} <time datetime="{p['date']}">{p['date']}</time></p>
-{md(p['body'])}{link}</article>"""
-    others = [q for q in POSTS if q["lang"] == lang and q["key"] != p["key"]][:3]
-    if others: body += f'<section class="wrap sec"><h2>{u["blog"]}</h2>{post_cards(lang, others)}</section>'
+<h1>{esc(p['title'])}</h1><p class="meta">{u['by']} <a href="{url(lang, ABOUT_SLUG[lang])}">{esc(name)}</a>, {SITE['i18n'][lang]['tagline'].lower() if lang!='ar' else SITE['i18n'][lang]['tagline']} · {u['updated']} <time datetime="{upd}">{upd}</time></p>
+{toc}{content}{link}{author}</article>"""
+    same = [q for q in POSTS if q["lang"] == lang and q["key"] != p["key"] and q.get("service") == p.get("service")]
+    rest = [q for q in POSTS if q["lang"] == lang and q["key"] != p["key"] and q not in same]
+    others = (same + rest)[:3]
+    if others: body += f'<section class="wrap sec"><h2>{u["related"]}</h2>{post_cards(lang, others)}</section>'
     full = abs_url(lang, BLOG_SLUG[lang] + "/" + p["slug"])
-    schema = graph({"@type": "BlogPosting", "headline": p["title"], "description": p["description"], "datePublished": p["date"], "dateModified": p["date"],
-                    "inLanguage": lang, "mainEntityOfPage": full, "author": {"@id": BASE + "/#walid"}, "publisher": {"@id": BASE + "/#business"}, "image": BASE + "/assets/og.png"},
-                   person_schema(lang),
+    art = {"@type": "BlogPosting", "headline": p["title"], "description": p["description"], "datePublished": p["date"], "dateModified": upd,
+           "inLanguage": lang, "mainEntityOfPage": full, "author": {"@id": BASE + "/#walid"}, "publisher": {"@id": BASE + "/#business"}, "image": BASE + "/assets/og.png"}
+    if svc: art["about"] = {"@type": "Service", "name": svc[lang]["title"], "url": abs_url(lang, svc[lang]["slug"])}
+    if p.get("section"): art["articleSection"] = p["section"]
+    schema = graph(art, person_schema(lang),
                    crumbs_schema([(u["home"], abs_url(lang)), (u["blog"], abs_url(lang, BLOG_SLUG[lang])), (p["title"], full)]))
     write(pbl, lang, head(lang, p["title"] + " | " + SITE["i18n"][lang]["brand"], p["description"], pbl, schema) + body + foot(lang))
 
@@ -356,6 +387,10 @@ def build_meta_files():
     llms += ["", "## Langues", f"- Français : {BASE}/", f"- English : {BASE}/en/", f"- العربية : {BASE}/ar/"]
     (OUT / "llms.txt").write_text("\n".join(llms) + "\n", encoding="utf-8")
     (OUT / ".nojekyll").write_text("")
+    shutil.copy(ROOT / "assets/favicon.ico", OUT / "favicon.ico")
+    (OUT / "site.webmanifest").write_text(json.dumps({"name": d["name"], "short_name": "Saidi Walid", "icons": [
+        {"src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png"}],
+        "theme_color": "#14202e", "background_color": "#14202e", "display": "standalone", "start_url": "/"}, ensure_ascii=False), encoding="utf-8")
 
 def main():
     if OUT.exists(): shutil.rmtree(OUT)
