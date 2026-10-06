@@ -15,6 +15,8 @@ BASE = SITE["base_url"].rstrip("/")
 LANGS = ["fr", "en", "ar"]
 PREFIX = {"fr": "", "en": "/en", "ar": "/ar"}
 TODAY = date.today().isoformat()
+import hashlib
+CSSV = hashlib.md5((ROOT / "assets/style.css").read_bytes()).hexdigest()[:8]
 
 UI = {
     "fr": {"home": "Accueil", "services": "Nos services", "more": "En savoir plus →", "why": "Pourquoi nous choisir",
@@ -180,7 +182,7 @@ def head(lang, title, desc, path_by_lang, schema):
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/favicon-96.png" sizes="96x96" type="image/png"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?{fonts}&display=swap">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v={CSSV}">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 </head>
 <body>
