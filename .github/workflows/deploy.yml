@@ -1,0 +1,33 @@
+name: Build et déploiement
+on:
+  push: { branches: [main] }
+  workflow_dispatch:
+permissions: { contents: write, pages: write, id-token: write }
+concurrency: { group: pages, cancel-in-progress: false }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Installation initiale (setup.zip)
+        if: hashFiles('setup.zip') != ''
+        run: |
+          unzip -o setup.zip -x '.github/*'
+          git rm -q setup.zip
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Installation des fichiers du site"
+          git push
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python3 build.py
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: _site }
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: "${{ steps.d.outputs.page_url }}" }
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4
