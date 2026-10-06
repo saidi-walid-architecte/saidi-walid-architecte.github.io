@@ -87,3 +87,4 @@ dl dt{font-weight:700;margin-top:12px}dl dd{margin:2px 0 0;color:var(--mut)}
 .brand small{white-space:nowrap}
 @media(max-width:1260px){.brand small{display:none}}
 @media(max-width:1100px){.mainnav>a,.dd>button{padding:10px 7px;font-size:14px}}
+@media(max-width:1480px){.brand small{display:none}}
