@@ -1,0 +1,33 @@
+# Interface d'édition simple : https://app.pagescms.org (connexion avec GitHub)
+media:
+  input: assets
+  output: /assets
+content:
+  - name: blog
+    label: Articles
+    type: collection
+    path: content/blog
+    filename: "{fields.lang}-{fields.slug}.md"
+    view: { fields: [title, lang, date] }
+    fields:
+      - { name: title, label: Titre, type: string, required: true }
+      - { name: lang, label: Langue, type: select, options: { values: [fr, ar, en] }, default: fr }
+      - { name: slug, label: Adresse de la page (sans accents ni espaces), type: string, required: true }
+      - { name: description, label: Résumé (150 caractères), type: text }
+      - { name: date, label: Date, type: date }
+      - { name: key, label: Identifiant commun FR/AR (même valeur pour les traductions), type: string }
+      - name: service
+        label: Service lié
+        type: select
+        options: { values: [conception, permis, chantier, conformite, expertise-judiciaire, expertise-amiable, releve, renovation, public] }
+      - { name: body, label: Texte, type: rich-text }
+  - name: site
+    label: Coordonnées et horaires
+    type: file
+    path: data/site.json
+    format: json
+  - name: services
+    label: Services
+    type: file
+    path: data/services.json
+    format: json

@@ -1,0 +1,421 @@
+[
+  {
+    "key": "conception",
+    "icon": "plan",
+    "fr": {
+      "slug": "conception-architecturale-batna",
+      "title": "Conception architecturale",
+      "short": "Maisons individuelles, immeubles, commerces et équipements : esquisse, plans et 3D.",
+      "meta_title": "Architecte à Batna : conception de maison et d'immeuble | Saidi Walid",
+      "meta_desc": "Architecte agréé à Batna : esquisse, plans, façades et vues 3D pour maison individuelle, immeuble, local commercial ou équipement. Devis au 0661 74 33 11.",
+      "h1": "Architecte à Batna : conception de maisons, immeubles et équipements",
+      "intro": "Saidi Walid, architecte agréé à Batna, conçoit votre projet de l'esquisse aux plans d'exécution : maison individuelle, immeuble R+n, local commercial ou équipement. Nous partons de votre terrain, de votre budget et des règles d'urbanisme applicables (certificat d'urbanisme, PDAU, POS) pour livrer un projet constructible et prêt pour le permis de construire.",
+      "items": ["Étude du terrain et des règles d'urbanisme applicables", "Esquisse et avant-projet, avec variantes", "Plans, coupes et façades", "Vues 3D pour valider le projet avant les travaux", "Dossier graphique pour le permis de construire", "Coordination avec l'ingénieur en génie civil (étude structure)"],
+      "faq": [
+        ["Combien de temps faut-il pour concevoir une maison ?", "Cela dépend de la taille du projet et du nombre d'allers-retours. Comptez quelques semaines entre l'esquisse validée et le dossier complet. Nous vous donnons un planning précis au premier rendez-vous."],
+        ["Faut-il un architecte pour construire sa maison en Algérie ?", "Oui. Le projet soumis au permis de construire doit être établi par un architecte agréé, conjointement avec un ingénieur en génie civil agréé pour la partie structure."],
+        ["Que dois-je apporter au premier rendez-vous ?", "L'acte de propriété ou le livret foncier, le plan de situation ou le certificat d'urbanisme si vous l'avez, et une idée de vos besoins et de votre budget."]
+      ]
+    },
+    "en": {
+      "slug": "architectural-design-batna",
+      "title": "Architectural design",
+      "short": "Houses, apartment buildings, shops and public facilities: sketches, plans and 3D.",
+      "meta_title": "Architect in Batna: house and building design | Saidi Walid",
+      "meta_desc": "Licensed architect in Batna, Algeria: sketches, plans, elevations and 3D views for houses, apartment buildings, shops and facilities. Call +213 661 74 33 11.",
+      "h1": "Architect in Batna: houses, buildings and facilities",
+      "intro": "Saidi Walid, licensed architect in Batna, designs your project from first sketch to construction drawings: detached house, multi-storey building, shop or public facility. We start from your plot, your budget and the applicable planning rules to deliver a buildable project, ready for the building permit.",
+      "items": ["Plot and planning rules analysis", "Sketch and preliminary design, with options", "Plans, sections and elevations", "3D views to validate the project before works", "Drawings for the building permit file", "Coordination with the structural engineer"],
+      "faq": [
+        ["How long does it take to design a house?", "It depends on the size of the project and the number of revisions. Allow a few weeks between an approved sketch and a complete file. We give you a precise schedule at the first meeting."],
+        ["Do I need an architect to build a house in Algeria?", "Yes. A project subject to a building permit must be prepared by a licensed architect, together with a licensed civil engineer for the structure."],
+        ["What should I bring to the first meeting?", "Your title deed, the site plan or planning certificate if you have it, and an idea of your needs and budget."]
+      ]
+    },
+    "ar": {
+      "slug": "architectural-design-batna",
+      "title": "التصميم المعماري",
+      "short": "سكنات فردية، عمارات، محلات تجارية ومرافق: رسم أولي، مخططات وصور ثلاثية الأبعاد.",
+      "meta_title": "مهندس معماري في باتنة: تصميم سكنات وعمارات | سعيدي وليد",
+      "meta_desc": "مهندس معماري معتمد في باتنة: رسم أولي، مخططات، واجهات وصور ثلاثية الأبعاد للسكن الفردي والعمارات والمحلات التجارية. اتصل: 0661743311.",
+      "h1": "مهندس معماري في باتنة: تصميم السكنات والعمارات والمرافق",
+      "intro": "يصمم سعيدي وليد، مهندس معماري معتمد في باتنة، مشروعكم من الرسم الأولي إلى مخططات التنفيذ: سكن فردي، عمارة متعددة الطوابق، محل تجاري أو مرفق. ننطلق من قطعة الأرض والميزانية وقواعد التعمير المطبقة (شهادة التعمير، المخطط التوجيهي للتهيئة والتعمير، مخطط شغل الأراضي) لنسلمكم مشروعًا قابلًا للإنجاز وجاهزًا لطلب رخصة البناء.",
+      "items": ["دراسة قطعة الأرض وقواعد التعمير المطبقة", "الرسم الأولي والمشروع التمهيدي مع عدة اقتراحات", "المخططات والمقاطع والواجهات", "صور ثلاثية الأبعاد للمصادقة على المشروع قبل الأشغال", "الملف البياني لطلب رخصة البناء", "التنسيق مع مهندس الهندسة المدنية (دراسة الهيكل)"],
+      "faq": [
+        ["كم يستغرق تصميم مسكن؟", "حسب حجم المشروع وعدد التعديلات. احسبوا بضعة أسابيع بين المصادقة على الرسم الأولي واكتمال الملف. نحدد لكم الآجال بدقة في أول موعد."],
+        ["هل يلزم مهندس معماري لبناء مسكن في الجزائر؟", "نعم. المشروع الخاضع لرخصة البناء يجب أن يعده مهندس معماري معتمد بالاشتراك مع مهندس معتمد في الهندسة المدنية بالنسبة للهيكل."],
+        ["ماذا أحضر في أول موعد؟", "عقد الملكية أو الدفتر العقاري، مخطط الموقع أو شهادة التعمير إن وجدت، وفكرة عن احتياجاتكم وميزانيتكم."]
+      ]
+    }
+  },
+  {
+    "key": "permis",
+    "icon": "doc",
+    "fr": {
+      "slug": "permis-de-construire-batna",
+      "title": "Permis de construire",
+      "short": "Montage du dossier, plans signés, dépôt et suivi auprès des services d'urbanisme.",
+      "meta_title": "Permis de construire à Batna : dossier et plans | Saidi Walid",
+      "meta_desc": "Dossier de permis de construire à Batna : plans d'architecte agréé, pièces écrites, dépôt et suivi. Aussi certificat d'urbanisme et permis de démolir. 0661 74 33 11.",
+      "h1": "Permis de construire à Batna : dossier, plans et suivi",
+      "intro": "Le permis de construire est délivré selon les modalités du décret exécutif n° 15-19 du 25 janvier 2015 relatif aux actes d'urbanisme. Le bureau Saidi Walid prépare le dossier complet (plans d'architecture signés par un architecte agréé, pièces écrites, coordination avec l'étude de génie civil), le dépose et répond aux demandes de compléments jusqu'à la délivrance.",
+      "items": ["Demande de certificat d'urbanisme", "Plan de situation, plan de masse et plans d'architecture", "Notice et pièces écrites", "Coordination avec l'étude génie civil", "Dépôt du dossier et suivi auprès des services compétents", "Permis de démolir, certificat de morcellement et permis de lotir"],
+      "faq": [
+        ["Quelles pièces faut-il pour un permis de construire ?", "Le titre de propriété (ou un document équivalent), les plans d'architecture et de génie civil signés par des professionnels agréés et les pièces écrites prévues par le décret 15-19. Nous vous remettons la liste exacte selon votre projet."],
+        ["Où dépose-t-on le dossier ?", "Le dossier est déposé auprès du président de l'APC de la commune du terrain, qui le transmet aux services instructeurs. Nous nous chargeons du dépôt et du suivi."],
+        ["Que faire en cas de refus ou de demande de compléments ?", "Nous analysons le motif, corrigeons les plans ou complétons le dossier, puis le redéposons. Un recours est aussi possible dans les conditions prévues par la réglementation."]
+      ]
+    },
+    "en": {
+      "slug": "building-permit-batna",
+      "title": "Building permit",
+      "short": "Permit file, signed plans, submission and follow-up with planning services.",
+      "meta_title": "Building permit in Batna: file and plans | Saidi Walid",
+      "meta_desc": "Building permit files in Batna, Algeria: plans by a licensed architect, written documents, submission and follow-up. Planning certificate and demolition permit too.",
+      "h1": "Building permit in Batna: file, plans and follow-up",
+      "intro": "Building permits in Algeria are issued under Executive Decree No. 15-19 of 25 January 2015 on planning documents. Saidi Walid's office prepares the full file (architectural plans signed by a licensed architect, written documents, coordination with the structural study), submits it and answers requests for additional documents until the permit is issued.",
+      "items": ["Planning certificate application", "Location plan, site plan and architectural plans", "Written documents", "Coordination with the structural engineering study", "Submission and follow-up with the competent services", "Demolition permit, subdivision certificate and subdivision permit"],
+      "faq": [
+        ["What documents does a building permit need?", "A title deed (or equivalent), architectural and structural plans signed by licensed professionals and the written documents listed by Decree 15-19. We give you the exact list for your project."],
+        ["Where is the file submitted?", "To the president of the municipal council (APC) where the plot is located, who forwards it to the reviewing services. We handle submission and follow-up."],
+        ["What if the permit is refused or incomplete?", "We analyse the reason, correct the plans or complete the file and resubmit it. An appeal is also possible under the conditions set by the regulations."]
+      ]
+    },
+    "ar": {
+      "slug": "building-permit-batna",
+      "title": "رخصة البناء وعقود التعمير",
+      "short": "تحضير الملف، مخططات موقعة، إيداع ومتابعة لدى مصالح التعمير.",
+      "meta_title": "رخصة البناء في باتنة: الملف والمخططات | سعيدي وليد",
+      "meta_desc": "ملف رخصة البناء في باتنة: مخططات مهندس معماري معتمد، الوثائق المكتوبة، الإيداع والمتابعة. شهادة التعمير ورخصة الهدم أيضًا. 0661743311.",
+      "h1": "رخصة البناء في باتنة: الملف والمخططات والمتابعة",
+      "intro": "تُسلَّم رخصة البناء وفق كيفيات المرسوم التنفيذي رقم 15-19 المؤرخ في 25 جانفي 2015 المحدد لكيفيات تحضير عقود التعمير وتسليمها. يحضّر مكتب سعيدي وليد الملف كاملًا (مخططات معمارية موقعة من مهندس معماري معتمد، الوثائق المكتوبة، التنسيق مع دراسة الهندسة المدنية)، ويودعه ويتابع طلبات الاستكمال إلى غاية تسليم الرخصة.",
+      "items": ["طلب شهادة التعمير", "مخطط الموقع، مخطط الكتلة والمخططات المعمارية", "المذكرة والوثائق المكتوبة", "التنسيق مع دراسة الهندسة المدنية", "إيداع الملف ومتابعته لدى المصالح المختصة", "رخصة الهدم، شهادة التقسيم ورخصة التجزئة"],
+      "faq": [
+        ["ما هي وثائق ملف رخصة البناء؟", "سند الملكية (أو ما يعادله)، المخططات المعمارية ومخططات الهندسة المدنية موقعة من مهنيين معتمدين، والوثائق المكتوبة التي ينص عليها المرسوم 15-19. نسلمكم القائمة الدقيقة حسب مشروعكم."],
+        ["أين يودع الملف؟", "لدى رئيس المجلس الشعبي البلدي للبلدية التي تقع فيها قطعة الأرض، والذي يحيله على مصالح التحقيق. نتكفل بالإيداع والمتابعة."],
+        ["ماذا أفعل في حال الرفض أو طلب الاستكمال؟", "نحلل السبب، نصحح المخططات أو نستكمل الملف ثم نعيد إيداعه. ويمكن أيضًا تقديم طعن وفق الشروط التي ينص عليها التنظيم."]
+      ]
+    }
+  },
+  {
+    "key": "chantier",
+    "icon": "crane",
+    "fr": {
+      "slug": "suivi-de-chantier-batna",
+      "title": "Suivi de chantier",
+      "short": "Visites, contrôle de conformité aux plans, réception des travaux.",
+      "meta_title": "Suivi de chantier à Batna par un architecte | Saidi Walid",
+      "meta_desc": "Suivi de chantier à Batna : visites régulières, contrôle de conformité aux plans et au permis, comptes rendus, réception des travaux. Architecte agréé, 0661 74 33 11.",
+      "h1": "Suivi de chantier à Batna par un architecte agréé",
+      "intro": "Un chantier mal suivi coûte cher : écarts avec le permis, malfaçons, retards. Le bureau Saidi Walid assure le suivi de vos travaux à Batna et dans la wilaya : visites régulières, contrôle de la conformité aux plans approuvés, comptes rendus et assistance à la réception. C'est aussi la meilleure préparation au certificat de conformité.",
+      "items": ["Visites de chantier régulières", "Contrôle de conformité aux plans et au permis de construire", "Comptes rendus de visite avec photos", "Vérification des quantités et des situations de travaux", "Assistance à la réception et liste des réserves", "Préparation du certificat de conformité"],
+      "faq": [
+        ["À quelle fréquence l'architecte vient-il sur le chantier ?", "Elle est fixée au contrat selon la taille du projet et les phases clés : implantation, fondations, ferraillage avant coulage, gros œuvre, second œuvre et réception."],
+        ["Le suivi de chantier est-il utile pour le certificat de conformité ?", "Oui. Un chantier réalisé conformément aux plans approuvés facilite l'obtention du certificat de conformité en fin de travaux."]
+      ]
+    },
+    "en": {
+      "slug": "site-supervision-batna",
+      "title": "Site supervision",
+      "short": "Site visits, compliance checks against the plans, handover of works.",
+      "meta_title": "Construction site supervision in Batna | Saidi Walid",
+      "meta_desc": "Construction site supervision in Batna, Algeria: regular visits, compliance checks against plans and permit, visit reports, handover. Licensed architect.",
+      "h1": "Construction site supervision in Batna by a licensed architect",
+      "intro": "A poorly supervised site is expensive: deviations from the permit, defects, delays. Saidi Walid's office supervises your works in Batna and across the wilaya: regular visits, compliance checks against the approved plans, reports and assistance at handover. It is also the best preparation for the certificate of compliance.",
+      "items": ["Regular site visits", "Compliance checks against plans and permit", "Visit reports with photos", "Checks of quantities and progress statements", "Handover assistance and snag list", "Preparation of the certificate of compliance"],
+      "faq": [
+        ["How often does the architect visit the site?", "The frequency is set in the contract according to project size and key phases: setting out, foundations, reinforcement before pouring, structure, finishes and handover."],
+        ["Does supervision help with the certificate of compliance?", "Yes. Works carried out according to the approved plans make it easier to obtain the certificate of compliance at the end."]
+      ]
+    },
+    "ar": {
+      "slug": "site-supervision-batna",
+      "title": "متابعة الأشغال",
+      "short": "زيارات الورشة، مراقبة المطابقة للمخططات، استلام الأشغال.",
+      "meta_title": "متابعة أشغال البناء في باتنة | المهندس المعماري سعيدي وليد",
+      "meta_desc": "متابعة ورشات البناء في باتنة: زيارات منتظمة، مراقبة المطابقة للمخططات ولرخصة البناء، محاضر الزيارة واستلام الأشغال. مهندس معماري معتمد.",
+      "h1": "متابعة أشغال البناء في باتنة من طرف مهندس معماري معتمد",
+      "intro": "الورشة التي لا تُتابع جيدًا تكلف كثيرًا: مخالفة الرخصة، عيوب في الإنجاز، تأخر. يتكفل مكتب سعيدي وليد بمتابعة أشغالكم في باتنة وفي الولاية: زيارات منتظمة، مراقبة المطابقة للمخططات المصادق عليها، محاضر ومرافقة عند الاستلام. وهي أفضل تحضير للحصول على شهادة المطابقة.",
+      "items": ["زيارات منتظمة للورشة", "مراقبة المطابقة للمخططات ولرخصة البناء", "محاضر زيارة مع صور", "التحقق من الكميات ووضعيات الأشغال", "المرافقة عند الاستلام وقائمة التحفظات", "تحضير ملف شهادة المطابقة"],
+      "faq": [
+        ["كم مرة يزور المهندس المعماري الورشة؟", "يحدد ذلك في العقد حسب حجم المشروع والمراحل الأساسية: التوقيع على الأرض، الأساسات، التسليح قبل الصب، الهيكل، أشغال التشطيب والاستلام."],
+        ["هل تساعد المتابعة في الحصول على شهادة المطابقة؟", "نعم. إنجاز الأشغال وفق المخططات المصادق عليها يسهّل الحصول على شهادة المطابقة في نهاية الأشغال."]
+      ]
+    }
+  },
+  {
+    "key": "conformite",
+    "icon": "check",
+    "fr": {
+      "slug": "mise-en-conformite-construction-batna",
+      "title": "Mise en conformité et régularisation",
+      "short": "Loi 08-15, certificat de conformité, plans de l'existant et dossier de régularisation.",
+      "meta_title": "Mise en conformité construction à Batna (loi 08-15) | Saidi Walid",
+      "meta_desc": "Régularisation et mise en conformité d'une construction à Batna selon la loi 08-15 : relevé, plans, dossier et suivi. Certificat de conformité. 0661 74 33 11.",
+      "h1": "Mise en conformité d'une construction à Batna (loi 08-15)",
+      "intro": "Construction inachevée, réalisée sans permis ou non conforme au permis obtenu : la loi n° 08-15 du 20 juillet 2008 fixe les règles de mise en conformité des constructions et de leur achèvement. Le bureau Saidi Walid relève l'existant, établit les plans, monte le dossier de régularisation et le suit auprès des services compétents. Nous préparons aussi le certificat de conformité pour les constructions achevées selon leur permis.",
+      "items": ["Relevé de la construction existante", "Plans de l'existant et état descriptif", "Dossier de mise en conformité (loi 08-15)", "Permis d'achèvement pour les constructions inachevées", "Certificat de conformité", "Suivi auprès des services d'urbanisme"],
+      "faq": [
+        ["La loi 08-15 est-elle encore applicable ?", "Ses délais ont été prorogés à plusieurs reprises. Vérifiez la situation en vigueur auprès de votre APC ou appelez-nous : nous vous indiquons la démarche adaptée à votre cas."],
+        ["Toutes les constructions peuvent-elles être régularisées ?", "Non. La loi exclut certains cas, par exemple les constructions sur des terrains non constructibles ou des servitudes. Nous étudions votre dossier avant d'engager la procédure."],
+        ["Pourquoi régulariser ?", "Sans conformité, il est difficile de vendre, de morceler, d'obtenir un acte ou de raccorder certains réseaux. La régularisation sécurise votre bien."]
+      ]
+    },
+    "en": {
+      "slug": "building-compliance-batna",
+      "title": "Compliance and regularisation",
+      "short": "Law 08-15, certificate of compliance, as-built plans and regularisation file.",
+      "meta_title": "Building regularisation in Batna (Law 08-15) | Saidi Walid",
+      "meta_desc": "Regularisation of buildings in Batna, Algeria under Law 08-15: survey, as-built plans, file and follow-up. Certificate of compliance. Licensed architect.",
+      "h1": "Building compliance and regularisation in Batna (Law 08-15)",
+      "intro": "Unfinished building, built without a permit or not matching the permit: Law No. 08-15 of 20 July 2008 sets the rules for bringing buildings into compliance and completing them. Saidi Walid's office surveys the existing building, draws the plans, prepares the regularisation file and follows it up with the authorities. We also prepare the certificate of compliance for buildings completed according to their permit.",
+      "items": ["Survey of the existing building", "As-built plans and description", "Compliance file (Law 08-15)", "Completion permit for unfinished buildings", "Certificate of compliance", "Follow-up with planning services"],
+      "faq": [
+        ["Is Law 08-15 still in force?", "Its deadlines have been extended several times. Check the current situation with your municipality (APC) or call us: we tell you the right procedure for your case."],
+        ["Can every building be regularised?", "No. The law excludes some cases, such as buildings on non-buildable land or easements. We review your file before starting."],
+        ["Why regularise?", "Without compliance it is hard to sell, subdivide, obtain a deed or connect some utilities. Regularisation secures your property."]
+      ]
+    },
+    "ar": {
+      "slug": "building-compliance-batna",
+      "title": "تسوية البنايات وشهادة المطابقة",
+      "short": "القانون 08-15، شهادة المطابقة، مخططات البناية القائمة وملف التسوية.",
+      "meta_title": "تسوية البنايات في باتنة (القانون 08-15) | سعيدي وليد",
+      "meta_desc": "تحقيق مطابقة البنايات وإتمام إنجازها في باتنة وفق القانون 08-15: رفع البناية، المخططات، الملف والمتابعة. شهادة المطابقة. 0661743311.",
+      "h1": "تسوية البنايات وتحقيق مطابقتها في باتنة (القانون 08-15)",
+      "intro": "بناية غير مكتملة، أو أنجزت دون رخصة، أو غير مطابقة للرخصة المسلّمة: يحدد القانون رقم 08-15 المؤرخ في 20 جويلية 2008 قواعد مطابقة البنايات وإتمام إنجازها. يقوم مكتب سعيدي وليد برفع البناية القائمة، وإعداد المخططات، وتحضير ملف التسوية ومتابعته لدى المصالح المختصة. كما نحضّر ملف شهادة المطابقة للبنايات المنجزة وفق رخصتها.",
+      "items": ["رفع البناية القائمة", "مخططات الحالة الراهنة والوصف", "ملف تحقيق المطابقة (القانون 08-15)", "رخصة إتمام الإنجاز للبنايات غير المكتملة", "شهادة المطابقة", "المتابعة لدى مصالح التعمير"],
+      "faq": [
+        ["هل ما زال القانون 08-15 ساري المفعول؟", "مُدّدت آجاله عدة مرات. تحققوا من الوضعية الحالية لدى البلدية أو اتصلوا بنا لنوجهكم إلى الإجراء المناسب لحالتكم."],
+        ["هل يمكن تسوية كل البنايات؟", "لا. يستثني القانون بعض الحالات، مثل البنايات المشيدة على أراضٍ غير قابلة للبناء أو على الارتفاقات. ندرس ملفكم قبل الشروع في الإجراء."],
+        ["لماذا التسوية؟", "دون مطابقة يصعب البيع أو التقسيم أو الحصول على عقد أو الربط ببعض الشبكات. التسوية تؤمّن ملكيتكم."]
+      ]
+    }
+  },
+  {
+    "key": "expertise-judiciaire",
+    "icon": "scale",
+    "fr": {
+      "slug": "expertise-judiciaire-batna",
+      "title": "Expertise judiciaire",
+      "short": "Missions ordonnées par le juge : foncier, partage, malfaçons, dégâts des eaux.",
+      "meta_title": "Expert judiciaire bâtiment et foncier à Batna | Saidi Walid",
+      "meta_desc": "Expertise judiciaire à Batna : bâtiment, foncier, immatriculation (ترقيم عقاري), partage entre héritiers, dégâts des eaux, malfaçons. Architecte expert judiciaire.",
+      "h1": "Expertise judiciaire en bâtiment et en foncier à Batna",
+      "intro": "Saidi Walid, architecte et expert judiciaire, réalise les missions d'expertise ordonnées par les juridictions de Batna : tribunaux, cour et tribunal administratif. L'expertise est encadrée par le Code de procédure civile et administrative (loi n° 08-09) : l'expert convoque les parties, examine les lieux et les documents dans le respect du contradictoire, puis dépose un rapport technique qui répond aux questions posées par le juge.",
+      "items": ["Litiges fonciers et immatriculation foncière (ترقيم عقاري)", "Partage et évaluation de biens entre héritiers (indivision)", "Dégâts des eaux et infiltrations entre voisins", "Malfaçons, fissures et désordres de construction", "Empiètement, limites de propriété et servitudes", "Conformité d'une construction au permis"],
+      "faq": [
+        ["Peut-on choisir l'expert judiciaire ?", "L'expert est désigné par le juge. Les parties peuvent toutefois proposer un expert ou demander son remplacement dans les conditions prévues par la loi."],
+        ["Comment se déroule une expertise judiciaire ?", "Après réception du jugement qui le désigne, l'expert convoque les parties, visite les lieux, recueille les documents et les observations de chacun, puis dépose son rapport au greffe dans le délai fixé par le juge."],
+        ["Qui paie l'expertise ?", "Le juge fixe une provision, généralement consignée par la partie qui demande l'expertise. La répartition finale des frais est décidée dans le jugement."],
+        ["Faites-vous des expertises hors tribunal ?", "Oui, voir notre service d'expertise amiable : il permet souvent de documenter un litige avant d'aller en justice."]
+      ]
+    },
+    "en": {
+      "slug": "court-expert-batna",
+      "title": "Court-appointed expertise",
+      "short": "Assignments ordered by the judge: land, inheritance, defects, water damage.",
+      "meta_title": "Court-appointed building and land expert in Batna | Saidi Walid",
+      "meta_desc": "Court-appointed expertise in Batna, Algeria: buildings, land registration disputes, inheritance division, water damage, construction defects. Architect and court expert.",
+      "h1": "Court-appointed building and land expertise in Batna",
+      "intro": "Saidi Walid, architect and court-appointed expert, carries out expert assignments ordered by the courts of Batna: first-instance courts, the court of appeal and the administrative court. Expertise is governed by the Code of Civil and Administrative Procedure (Law No. 08-09): the expert summons the parties, examines the premises and documents in an adversarial process, then files a technical report answering the judge's questions.",
+      "items": ["Land disputes and land registration", "Division and valuation of inherited property", "Water damage and leaks between neighbours", "Construction defects and cracks", "Encroachment, boundaries and easements", "Compliance of a building with its permit"],
+      "faq": [
+        ["Can I choose the court expert?", "The expert is appointed by the judge. Parties may however suggest an expert or request a replacement under the conditions set by law."],
+        ["How does a court expertise work?", "Once appointed by judgment, the expert summons the parties, visits the premises, collects documents and observations, then files the report with the court registry within the deadline set by the judge."],
+        ["Who pays for the expertise?", "The judge sets an advance, usually paid by the party requesting the expertise. The final split of costs is decided in the judgment."]
+      ]
+    },
+    "ar": {
+      "slug": "court-expert-batna",
+      "title": "الخبرة القضائية",
+      "short": "مهام يأمر بها القاضي: العقار، القسمة، عيوب البناء، تسرب المياه.",
+      "meta_title": "خبير قضائي في البناء والعقار بباتنة | سعيدي وليد",
+      "meta_desc": "خبرة قضائية في باتنة: البناء، الترقيم العقاري، القسمة بين الورثة، تسرب المياه بين الجيران، عيوب البناء والتشققات. مهندس معماري وخبير قضائي.",
+      "h1": "خبير قضائي في البناء والعقار بباتنة",
+      "intro": "ينجز سعيدي وليد، المهندس المعماري والخبير القضائي، مهام الخبرة التي تأمر بها الجهات القضائية بباتنة: المحاكم، المجلس القضائي والمحكمة الإدارية. تخضع الخبرة لأحكام قانون الإجراءات المدنية والإدارية (القانون رقم 08-09): يستدعي الخبير الأطراف، ويعاين الأماكن ويطّلع على الوثائق في احترام لمبدأ الوجاهية، ثم يودع تقريرًا تقنيًا يجيب فيه عن الأسئلة التي حددها القاضي.",
+      "items": ["المنازعات العقارية والترقيم العقاري", "القسمة وتقييم العقارات بين الورثة (الشيوع)", "أضرار تسرب المياه والرطوبة بين الجيران", "عيوب البناء والتشققات والاختلالات", "التعدي على الملكية وتحديد الحدود والارتفاقات", "مدى مطابقة البناية لرخصة البناء"],
+      "faq": [
+        ["هل يمكن اختيار الخبير القضائي؟", "يعيّن القاضي الخبير. ويمكن للأطراف مع ذلك اقتراح خبير أو طلب استبداله وفق الشروط التي ينص عليها القانون."],
+        ["كيف تجري الخبرة القضائية؟", "بعد استلام الحكم الذي يعيّنه، يستدعي الخبير الأطراف، ويعاين الأماكن، ويجمع الوثائق وملاحظات كل طرف، ثم يودع تقريره بأمانة الضبط في الأجل الذي حدده القاضي."],
+        ["من يدفع أتعاب الخبرة؟", "يحدد القاضي تسبيقًا يودعه عادة الطرف الذي طلب الخبرة. ويُفصل في توزيع المصاريف نهائيًا في الحكم."],
+        ["هل تنجزون خبرات خارج المحكمة؟", "نعم، راجعوا خدمة الخبرة الودية: تسمح غالبًا بتوثيق النزاع قبل اللجوء إلى القضاء."]
+      ]
+    }
+  },
+  {
+    "key": "expertise-amiable",
+    "icon": "search",
+    "fr": {
+      "slug": "expertise-batiment-amiable-batna",
+      "title": "Expertise amiable et constat",
+      "short": "Fissures, infiltrations, état des lieux, évaluation avant achat ou partage.",
+      "meta_title": "Expertise bâtiment à Batna : fissures, infiltrations | Saidi Walid",
+      "meta_desc": "Expertise bâtiment amiable à Batna : fissures, infiltrations, dégât des eaux, état des lieux avant travaux, évaluation d'un bien. Rapport d'architecte. 0661 74 33 11.",
+      "h1": "Expertise bâtiment amiable à Batna : fissures, infiltrations, évaluation",
+      "intro": "Vous constatez des fissures, une infiltration venant du voisin ou vous voulez connaître l'état réel d'un bien avant de l'acheter ou de le partager ? Le bureau Saidi Walid réalise une expertise technique à votre demande, hors procédure judiciaire. Le rapport décrit les désordres, leurs causes probables et les travaux à prévoir. Il peut servir de base à un accord amiable ou être produit en justice.",
+      "items": ["Diagnostic de fissures et désordres structurels apparents", "Recherche de cause d'infiltration et dégât des eaux", "État des lieux avant travaux chez le voisin", "Évaluation d'un bien immobilier", "Avis technique avant achat", "Estimation du coût des travaux de reprise"],
+      "faq": [
+        ["Quelle différence avec une expertise judiciaire ?", "L'expertise amiable est demandée par vous, sans juge. Elle est plus rapide et sert à documenter un problème ou à négocier. L'expertise judiciaire est ordonnée par le tribunal et s'impose dans la procédure."],
+        ["Mon voisin commence des travaux : que faire ?", "Faites établir un état des lieux de votre bâtiment avant le début du chantier. En cas de fissures ensuite, vous aurez une preuve de l'état antérieur."]
+      ]
+    },
+    "en": {
+      "slug": "building-survey-batna",
+      "title": "Private building survey",
+      "short": "Cracks, leaks, condition reports, valuation before purchase or division.",
+      "meta_title": "Building survey in Batna: cracks, leaks, valuation | Saidi Walid",
+      "meta_desc": "Private building surveys in Batna, Algeria: cracks, leaks, water damage, condition report before works, property valuation. Architect's report.",
+      "h1": "Private building survey in Batna: cracks, leaks and valuation",
+      "intro": "Cracks in your walls, a leak from the neighbour, or you need the real condition of a property before buying or dividing it? Saidi Walid's office carries out a technical survey at your request, outside court proceedings. The report describes the defects, their likely causes and the works required. It can support an amicable settlement or be filed in court.",
+      "items": ["Diagnosis of cracks and visible structural defects", "Leak and water damage source investigation", "Condition report before a neighbour's works", "Property valuation", "Technical opinion before purchase", "Cost estimate for repair works"],
+      "faq": [
+        ["How is it different from a court expertise?", "A private survey is requested by you, without a judge. It is faster and documents a problem or supports negotiation. A court expertise is ordered by the court and binds the proceedings."],
+        ["My neighbour is starting works: what should I do?", "Have a condition report of your building made before works start. If cracks appear later, you will have proof of the earlier condition."]
+      ]
+    },
+    "ar": {
+      "slug": "building-survey-batna",
+      "title": "الخبرة الودية والمعاينة",
+      "short": "تشققات، تسرب مياه، معاينة الحالة، تقييم قبل الشراء أو القسمة.",
+      "meta_title": "خبرة البناء في باتنة: تشققات، تسرب المياه، تقييم | سعيدي وليد",
+      "meta_desc": "خبرة ودية في البناء بباتنة: تشققات، تسرب المياه، معاينة الحالة قبل أشغال الجار، تقييم العقار. تقرير مهندس معماري. 0661743311.",
+      "h1": "خبرة ودية في البناء بباتنة: تشققات، تسرب المياه، تقييم",
+      "intro": "تلاحظون تشققات، أو تسربًا للمياه من عند الجار، أو تريدون معرفة الحالة الحقيقية لعقار قبل شرائه أو قسمته؟ ينجز مكتب سعيدي وليد خبرة تقنية بطلب منكم، خارج الإجراءات القضائية. يصف التقرير الاختلالات وأسبابها المحتملة والأشغال اللازمة، ويمكن اعتماده أساسًا لاتفاق ودي أو تقديمه أمام القضاء.",
+      "items": ["تشخيص التشققات والاختلالات الظاهرة في الهيكل", "البحث عن مصدر تسرب المياه والرطوبة", "معاينة حالة البناية قبل أشغال الجار", "تقييم العقارات", "رأي تقني قبل الشراء", "تقدير تكلفة أشغال الإصلاح"],
+      "faq": [
+        ["ما الفرق مع الخبرة القضائية؟", "الخبرة الودية تطلبونها أنتم دون قاضٍ، وهي أسرع وتفيد في توثيق المشكل أو التفاوض. أما الخبرة القضائية فتأمر بها المحكمة وتندرج في إطار الدعوى."],
+        ["جاري سيبدأ أشغالًا، ماذا أفعل؟", "اطلبوا معاينة لحالة بنايتكم قبل انطلاق الورشة. وإن ظهرت تشققات بعد ذلك، يكون لديكم دليل على الحالة السابقة."]
+      ]
+    }
+  },
+  {
+    "key": "releve",
+    "icon": "ruler",
+    "fr": {
+      "slug": "releve-plans-existant-batna",
+      "title": "Relevé et plans de l'existant",
+      "short": "Relevé de bâtiments existants, plans pour vente, partage, location ou travaux.",
+      "meta_title": "Relevé de bâtiment et plans de l'existant à Batna | Saidi Walid",
+      "meta_desc": "Relevé et plans de l'existant à Batna : maison, appartement, local, immeuble. Plans pour vente, partage entre héritiers, dossier administratif ou travaux.",
+      "h1": "Relevé et plans de l'existant à Batna",
+      "intro": "Pas de plans pour votre maison, votre local ou votre immeuble ? Le bureau Saidi Walid se déplace, relève le bâtiment et produit des plans fiables et cotés. Ils servent à un dossier administratif, une vente, un partage entre héritiers, une location ou un projet de travaux.",
+      "items": ["Relevé sur place des niveaux et des façades", "Plans cotés, coupes et façades", "Calcul des surfaces", "Plans pour dossier de partage ou de vente", "Fichiers DWG et PDF"],
+      "faq": [
+        ["Combien de temps prend un relevé ?", "Une visite suffit généralement pour une maison ou un appartement. Les plans sont livrés quelques jours après, selon la taille du bâtiment."]
+      ]
+    },
+    "en": {
+      "slug": "measured-survey-batna",
+      "title": "Measured survey and as-built plans",
+      "short": "Survey of existing buildings, plans for sale, division, rental or works.",
+      "meta_title": "Measured building survey in Batna | Saidi Walid",
+      "meta_desc": "Measured surveys and as-built plans in Batna, Algeria: house, flat, shop or building. Plans for sale, inheritance division, administrative files or works.",
+      "h1": "Measured survey and as-built plans in Batna",
+      "intro": "No plans for your house, shop or building? Saidi Walid's office visits, surveys the building and produces reliable dimensioned plans. They are used for an administrative file, a sale, an inheritance division, a rental or a works project.",
+      "items": ["On-site survey of floors and elevations", "Dimensioned plans, sections and elevations", "Floor area calculation", "Plans for division or sale files", "DWG and PDF files"],
+      "faq": [
+        ["How long does a survey take?", "One visit is usually enough for a house or flat. Plans are delivered a few days later, depending on the size of the building."]
+      ]
+    },
+    "ar": {
+      "slug": "measured-survey-batna",
+      "title": "رفع المخططات للبنايات القائمة",
+      "short": "رفع البنايات القائمة ومخططات للبيع أو القسمة أو الكراء أو الأشغال.",
+      "meta_title": "رفع المخططات للبنايات القائمة في باتنة | سعيدي وليد",
+      "meta_desc": "رفع ومخططات الحالة الراهنة في باتنة: مسكن، شقة، محل أو عمارة. مخططات للبيع أو القسمة بين الورثة أو الملفات الإدارية أو الأشغال.",
+      "h1": "رفع المخططات للبنايات القائمة في باتنة",
+      "intro": "لا تملكون مخططات لمسكنكم أو محلكم أو عمارتكم؟ يتنقل مكتب سعيدي وليد لرفع البناية وإعداد مخططات دقيقة بالأبعاد، تصلح لملف إداري أو بيع أو قسمة بين الورثة أو كراء أو مشروع أشغال.",
+      "items": ["رفع ميداني للطوابق والواجهات", "مخططات بالأبعاد، مقاطع وواجهات", "حساب المساحات", "مخططات لملفات القسمة أو البيع", "ملفات DWG وPDF"],
+      "faq": [
+        ["كم يستغرق رفع المخططات؟", "تكفي عادة زيارة واحدة لمسكن أو شقة، وتُسلَّم المخططات بعد أيام قليلة حسب حجم البناية."]
+      ]
+    }
+  },
+  {
+    "key": "renovation",
+    "icon": "home",
+    "fr": {
+      "slug": "renovation-extension-batna",
+      "title": "Rénovation, extension et aménagement",
+      "short": "Surélévation, extension, réaménagement intérieur et façades.",
+      "meta_title": "Rénovation, extension et surélévation à Batna | Saidi Walid",
+      "meta_desc": "Architecte à Batna pour rénovation, extension, surélévation de maison et aménagement intérieur : faisabilité, plans, autorisations et suivi. 0661 74 33 11.",
+      "h1": "Rénovation, extension et surélévation à Batna",
+      "intro": "Ajouter un étage, agrandir une maison, transformer un rez-de-chaussée en local commercial ou repenser un intérieur : chaque projet sur l'existant commence par une vérification de faisabilité (structure, règles d'urbanisme, autorisations). Le bureau Saidi Walid vous accompagne de l'étude au suivi des travaux.",
+      "items": ["Étude de faisabilité sur l'existant", "Surélévation et extension", "Transformation de rez-de-chaussée en local", "Aménagement intérieur et façades", "Dossier d'autorisation", "Suivi des travaux"],
+      "faq": [
+        ["Peut-on ajouter un étage à une maison existante ?", "Seulement si la structure le permet et si les règles d'urbanisme l'autorisent. Une vérification par l'ingénieur structure et un permis sont nécessaires."]
+      ]
+    },
+    "en": {
+      "slug": "renovation-extension-batna",
+      "title": "Renovation, extension and interiors",
+      "short": "Extra storeys, extensions, interior redesign and facades.",
+      "meta_title": "Renovation and house extension in Batna | Saidi Walid",
+      "meta_desc": "Architect in Batna for renovation, house extension, extra storey and interior design: feasibility, plans, permits and site supervision.",
+      "h1": "Renovation, extension and extra storeys in Batna",
+      "intro": "Adding a storey, extending a house, turning a ground floor into a shop or redesigning an interior: every project on an existing building starts with a feasibility check (structure, planning rules, permits). Saidi Walid's office supports you from study to site supervision.",
+      "items": ["Feasibility study on the existing building", "Extra storey and extension", "Ground floor conversion into a shop", "Interior design and facades", "Permit file", "Site supervision"],
+      "faq": [
+        ["Can I add a storey to an existing house?", "Only if the structure allows it and planning rules permit it. A structural check and a permit are required."]
+      ]
+    },
+    "ar": {
+      "slug": "renovation-extension-batna",
+      "title": "الترميم والتوسعة والتهيئة",
+      "short": "تعلية، توسعة، إعادة تهيئة داخلية وواجهات.",
+      "meta_title": "ترميم وتوسعة وتعلية المساكن في باتنة | سعيدي وليد",
+      "meta_desc": "مهندس معماري في باتنة لترميم وتوسعة وتعلية المساكن والتهيئة الداخلية: دراسة الجدوى، المخططات، الرخص والمتابعة. 0661743311.",
+      "h1": "الترميم والتوسعة وتعلية المساكن في باتنة",
+      "intro": "إضافة طابق، توسيع مسكن، تحويل طابق أرضي إلى محل تجاري أو إعادة تهيئة الداخل: كل مشروع على بناية قائمة يبدأ بدراسة الجدوى (الهيكل، قواعد التعمير، الرخص). يرافقكم مكتب سعيدي وليد من الدراسة إلى متابعة الأشغال.",
+      "items": ["دراسة الجدوى على البناية القائمة", "التعلية والتوسعة", "تحويل الطابق الأرضي إلى محل", "التهيئة الداخلية والواجهات", "ملف الرخصة", "متابعة الأشغال"],
+      "faq": [
+        ["هل يمكن إضافة طابق لمسكن قائم؟", "فقط إذا سمح الهيكل وقواعد التعمير بذلك. يلزم التحقق من طرف مهندس الهيكل والحصول على رخصة."]
+      ]
+    }
+  },
+  {
+    "key": "public",
+    "icon": "building",
+    "fr": {
+      "slug": "maitrise-oeuvre-publique-batna",
+      "title": "Projets publics et concours",
+      "short": "Maîtrise d'œuvre pour maîtres d'ouvrage publics : concours, études, suivi.",
+      "meta_title": "Maîtrise d'œuvre publique et concours d'architecture à Batna | Saidi Walid",
+      "meta_desc": "Bureau d'études d'architecture à Batna pour maîtres d'ouvrage publics : concours de maîtrise d'œuvre, études d'équipements (écoles, logements), suivi.",
+      "h1": "Maîtrise d'œuvre publique et concours d'architecture à Batna",
+      "intro": "Le bureau Saidi Walid répond aux concours de maîtrise d'œuvre lancés par les maîtres d'ouvrage publics (directions de wilaya, APC, offices) pour des équipements comme les écoles, les logements ou les bâtiments administratifs. Nous assurons les études d'esquisse à l'exécution et le suivi des réalisations.",
+      "items": ["Réponse aux concours de maîtrise d'œuvre", "Esquisse, avant-projet et projet d'exécution", "Équipements scolaires, logements, bâtiments administratifs", "Pièces écrites et estimatifs", "Suivi et contrôle des réalisations"],
+      "faq": [
+        ["Pour quels maîtres d'ouvrage travaillez-vous ?", "Pour des maîtres d'ouvrage publics et privés : directions de wilaya, collectivités, promoteurs et particuliers."]
+      ]
+    },
+    "en": {
+      "slug": "public-projects-batna",
+      "title": "Public projects and competitions",
+      "short": "Design services for public clients: competitions, studies, supervision.",
+      "meta_title": "Public projects and architecture competitions in Batna | Saidi Walid",
+      "meta_desc": "Architecture office in Batna, Algeria for public clients: design competitions, studies for schools and housing, construction supervision.",
+      "h1": "Public projects and architecture competitions in Batna",
+      "intro": "Saidi Walid's office enters design competitions launched by public clients (wilaya directorates, municipalities, public offices) for facilities such as schools, housing and administrative buildings. We handle studies from sketch to construction drawings and supervise the works.",
+      "items": ["Design competition entries", "Sketch, preliminary and detailed design", "Schools, housing and administrative buildings", "Written documents and cost estimates", "Construction supervision"],
+      "faq": [
+        ["Which clients do you work for?", "Public and private clients: wilaya directorates, local authorities, developers and individuals."]
+      ]
+    },
+    "ar": {
+      "slug": "public-projects-batna",
+      "title": "المشاريع العمومية والمسابقات",
+      "short": "الدراسات والمتابعة لأصحاب المشاريع العموميين: مسابقات، دراسات، متابعة.",
+      "meta_title": "مسابقات الدراسات والمتابعة والمشاريع العمومية بباتنة | سعيدي وليد",
+      "meta_desc": "مكتب دراسات في الهندسة المعمارية بباتنة لأصحاب المشاريع العموميين: مسابقات الدراسات والمتابعة، دراسة المدارس والسكنات، متابعة الإنجاز.",
+      "h1": "الدراسات والمتابعة للمشاريع العمومية والمسابقات المعمارية بباتنة",
+      "intro": "يشارك مكتب سعيدي وليد في مسابقات الدراسات والمتابعة التي يطلقها أصحاب المشاريع العموميون (مديريات الولاية، البلديات، الدواوين) لإنجاز مرافق مثل المدارس والسكنات والمباني الإدارية. نتكفل بالدراسات من الرسم الأولي إلى مخططات التنفيذ وبمتابعة الإنجاز.",
+      "items": ["المشاركة في مسابقات الدراسات والمتابعة", "الرسم الأولي، المشروع التمهيدي ومشروع التنفيذ", "المؤسسات التربوية، السكنات والمباني الإدارية", "الوثائق المكتوبة والكشوف التقديرية", "متابعة الإنجاز ومراقبته"],
+      "faq": [
+        ["مع أي أصحاب مشاريع تعملون؟", "مع أصحاب المشاريع العموميين والخواص: مديريات الولاية، الجماعات المحلية، المرقين والخواص."]
+      ]
+    }
+  }
+]
