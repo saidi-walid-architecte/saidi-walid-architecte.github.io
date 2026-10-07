@@ -493,7 +493,7 @@ def build_about(lang):
 def build_404():
     u = UI["fr"]
     pbl = {"fr": "/404.html"}
-    page = head("fr", u["notfound"], u["notfound_txt"], pbl, graph(org_schema("fr"))).replace('content="index,follow,max-image-preview:large"', 'content="noindex"')
+    page = head("fr", u["notfound"], u["notfound_txt"], pbl, graph(org_schema("fr")))
     page += f'<section class="hero"><div class="wrap"><h1>{u["notfound"]}</h1><p class="lead">{u["notfound_txt"]}</p><p><a class="btn" href="/">{u["home"]}</a></p></div></section>' + foot("fr")
     (OUT / "404.html").write_text(page, encoding="utf-8")
 
